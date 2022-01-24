@@ -1,12 +1,15 @@
 {
-  "name": "innbyggerkontakt-storybook",
-  "version": "0.1.0",
+  "name": "innbyggerkontakt-design-system",
+  "version": "0.1.8",
+  "private": false,
+  "description": "Innbyggerkontakt design system",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": "https://github.com/knowit/innbyggerkontakt-storybook.git",
   "author": "monikahm <monika.muzyk@knowit.no>",
   "license": "MIT",
   "dependencies": {
