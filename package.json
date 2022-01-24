@@ -1,6 +1,6 @@
 {
   "name": "innbyggerkontakt-design-system",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "Innbyggerkontakt design system",
   "main": "./dist/index.js",
