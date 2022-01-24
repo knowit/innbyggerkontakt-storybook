@@ -1,0 +1,12 @@
+@use '../../styles/defaultColors' as color;
+@use '../../styles/defaultFonts' as font;
+
+.css-12jo7m5 {
+  color: color.$white !important;
+  font-size: font.$px18 !important;
+}
+
+.css-xb97g8:hover {
+  background-color: color.$errorLight !important;
+  color: color.$error !important;
+}

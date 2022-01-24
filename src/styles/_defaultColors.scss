@@ -1,0 +1,40 @@
+//Farger fra figma designsystem
+
+$background: #f2fffc;
+
+//Primary
+$bright-green: #1dd19d;
+$darker-green: #16a078;
+$green-opaque: rgba($bright-green, 0.4);
+$even-darker-green: #128664;
+$darkest-green: #095f46;
+
+//Secondary
+$light-light-blue: #b0d3ff;
+$light-blue: #86bcff;
+$light-bright-blue: #4392f4;
+$light-blue-transparent: rgba($light-blue, 0.2);
+$bright-blue: #0e72ed;
+$dark-bright-blue: #0853b0;
+$dark-blue: #052b58;
+$darkest-blue: #031934;
+
+//Tertiary
+$bright-yellow: #f3a310;
+$darker-yellow: #c8850a;
+$darkest-yellow: #a46a00;
+
+//Other
+$error: #e8582d;
+$errorLight: #f8977b;
+$black: #0a0a0a;
+$white: #ffffff;
+$transparent: rgba($white, 0);
+
+$gray: #333333;
+$gray-text: #666666;
+$gray-border: #898989;
+$gray-inactive: #c5ccd3;
+$gray-incomplete: #c4c4c4;
+$gray-transparent: rgba($gray-border, 0.2);
+$border-shadow: #00000029;

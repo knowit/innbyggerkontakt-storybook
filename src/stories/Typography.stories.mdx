@@ -1,0 +1,22 @@
+import { Meta, Typeset } from '@storybook/addon-docs';
+
+import { typography } from '../common/typography';
+
+<Meta title="Global/Typography" />
+
+# Typography
+
+**Font:** IBM Plex Sans
+
+**Weights:** 200(light), 400(regular), 500(bold), 600(extrabold), 700(black)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.px11),
+    Number(typography.size.px14),
+    Number(typography.size.px18),
+    Number(typography.size.px24),
+    Number(typography.size.px48),
+  ]}
+  fontWeight={typography.weight.black}
+/>
