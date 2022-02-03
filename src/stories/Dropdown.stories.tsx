@@ -16,7 +16,6 @@ export const SingleValue = () => (
       { label: 'loading2', value: 'loading2' },
       { label: 'loading3', value: 'loading3' },
     ]}
-    value={'value'}
     ariaLabel={'label'}
     ariaError={'error'}
   />
@@ -31,7 +30,6 @@ export const MultipleValues = () => (
       { label: 'loading3', value: 'loading3' },
     ]}
     isMulti
-    value={'value'}
     ariaLabel={'ariaLabel'}
     ariaError={'ariaError'}
   />

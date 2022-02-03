@@ -14,7 +14,7 @@ import { color, typography } from '../../common';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export interface InputProps {
-  id: string;
+  id?: string;
   type: string;
   value?: string;
   label: string;
@@ -23,8 +23,8 @@ export interface InputProps {
   labelIcon?: ReactNode;
   icon?: SVGProps<SVGElement>;
   error?: boolean;
-  hideLabel: boolean;
-  startFocused: boolean;
+  hideLabel?: boolean;
+  startFocused?: boolean;
   appearence?: 'green' | 'blue';
 }
 

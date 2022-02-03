@@ -7,6 +7,7 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: 'big' | 'small' | 'svg';
   svg?: 'left' | 'right';
   variant?: 'rounded' | 'square';
+  type?: 'button' | 'submit' | 'reset'
   fontWeight?: 'regular' | 'bold' | 'extrabold';
   color?: 'primary' | 'secondary' | 'tertiary' | 'mint';
   fontSize?: 'px11' | 'px14' | 'px18' | 'px24' | 'px48';
@@ -14,7 +15,6 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
 }
 interface StylingProps {
   disabled?: boolean;
-
   fontSize: number;
   fontWeight: string;
   size: string;
@@ -54,6 +54,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
   svg {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   &:disabled {
     background-color: ${color.grayBorder};
@@ -148,19 +149,19 @@ ${(props) =>
   ${(props) =>
     props.color === 'primary' &&
     `
-      background-color: ${color.brightGreen};
-      color: ${color.black};
-      border-color: ${color.brightGreen};
+      background-color: ${color.darkerGreen};
+      color: ${color.white};
+      border-color: ${color.darkerGreen};
 
        &:focus {
         background-color: ${color.brightGreen};
-        color: ${color.black};
+        color: ${color.white};
         border-color: ${color.black};
         outline: none;
       }
       &:active {
         background-color: ${color.darkerGreen};
-        color: ${color.black};
+        color: ${color.white};
         border-color: ${color.darkerGreen};
       }
      `}
@@ -255,6 +256,7 @@ export const Button = ({
   fontSize = 'px14',
   fontWeight = 'regular',
   size = 'small',
+  type = 'button',
   disabled = false,
   svg,
   ...props

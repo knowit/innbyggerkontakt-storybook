@@ -77,7 +77,7 @@ export const Disabled = () => (
     <Button size="big" disabled>
       Big
     </Button>
-    <Button boxShadow={true} disabled>
+    <Button boxShadow={true} disabled style={{width: "200px"}}>
       Boxshadow
     </Button>
   </>

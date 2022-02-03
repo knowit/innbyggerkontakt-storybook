@@ -9,7 +9,6 @@ interface OptionProps {
 }
 export interface SelectProps extends Omit<Props, 'isMulti'> {
   id?: string;
-  value: string;
   defaultValue?: OptionProps[];
   options: OptionProps[];
   closeMenuOnSelect?: boolean;
@@ -89,7 +88,6 @@ const StyledSelect: StylesConfig = {
 export const Dropdown = ({
   id,
   options,
-  value,
   defaultValue,
   closeMenuOnSelect = true,
   isClearable,
@@ -103,7 +101,6 @@ export const Dropdown = ({
       id={id}
       styles={StyledSelect}
       options={options}
-      value={value}
       defaultValue={defaultValue}
       isClearable={isClearable}
       closeMenuOnSelect={closeMenuOnSelect}
