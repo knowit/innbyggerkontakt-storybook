@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { typography } from '../../common';
+import { typography } from '../common';
 
 export interface RadioButtonProps {
   id?: string;

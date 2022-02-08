@@ -1,6 +1,6 @@
 import React, { SVGProps } from 'react';
 import { Edit, Message, Person } from '@mui/icons-material';
-import { Input, InputProps } from '../components/Input/Input';
+import { Input, InputProps } from '../components/Input';
 
 const message = <Message />;
 const person = <Person />;
@@ -45,7 +45,7 @@ export default {
   },
 };
 
-export const Basic = () => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} startFocused={false} />;
+export const Default = () => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} startFocused={false} />;
 
 export const Lab = (args: InputProps) => <Input {...args} />;
 Lab.args = {};

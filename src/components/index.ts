@@ -1,9 +1,10 @@
-import { Button } from './Button/Button';
-import { Card } from './Card/Card';
+import { Button } from './Button';
+import { Card } from './Card';
 import { Dropdown } from './Dropdown/Dropdown';
-import { Input } from './Input/Input';
+import { Input } from './Input';
 import { Loading } from './Loading/Loading';
-import { Pagination } from './Pagination/Pagination';
-import { RadioButton } from './RadioButton/RadioButton';
+import { Pagination } from './Pagination';
+import { Popup } from './Popup';
+import { RadioButton } from './RadioButton';
 
-export { Button, Card, Dropdown, Input, Loading, Pagination, RadioButton };
+export { Button, Card, Dropdown, Input, Loading, Pagination, Popup, RadioButton };

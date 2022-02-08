@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography } from '../..';
-import { Button } from '../Button/Button';
-import { Next, Previous } from '../../images';
+import { color, typography } from '..';
+import { Button } from './Button';
+import { Next, Previous } from '../images';
 
 export interface PaginationProps {
     activePage: number;

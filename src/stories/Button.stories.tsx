@@ -1,14 +1,14 @@
 import React from 'react';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
-import { Button, ButtonProps } from '../components/Button/Button';
+import { Button, ButtonProps } from '../components/Button';
 
 export default {
   title: 'Navigation/Button',
   component: Button,
 };
 
-export const Basic = (args: ButtonProps) => <Button {...args}>Button text</Button>;
-Basic.args = { children: 'Label' };
+export const Default = (args: ButtonProps) => <Button {...args}>Button text</Button>;
+Default.args = { children: 'Label' };
 
 export const Svg = (args: ButtonProps) => (
   <div style={{ marginRight: '10px', display: 'flex', alignItems: 'center' }}>

@@ -10,7 +10,7 @@ import React, {
   SVGProps,
 } from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography } from '../../common';
+import { color, typography } from '../common';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export interface InputProps {

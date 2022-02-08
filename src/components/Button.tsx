@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography } from '../../common/index';
+import { color, typography } from '../common/index';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   text?: React.ReactNode;

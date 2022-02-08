@@ -6,7 +6,7 @@ export default {
   component: Dropdown,
 };
 
-export const Primary = (args: SelectProps) => <Dropdown placeholder="placeholder" {...args} />;
+export const Default = (args: SelectProps) => <Dropdown placeholder="placeholder" {...args} />;
 
 export const SingleValue = () => (
   <Dropdown

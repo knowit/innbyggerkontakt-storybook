@@ -1,12 +1,12 @@
 import React from 'react';
-import {Card} from '../components/Card/Card';
+import {Card} from '../components/Card';
 
 export default {
      title: "Components/Card",
      component: Card
  }
 
- export const Primary = (args) => <Card {...args}/>
+ export const Default = (args) => <Card {...args}/>
 
  export const Sizes = () => 
     <div>
