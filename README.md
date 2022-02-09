@@ -17,10 +17,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 *Innbyggerkontakt er skrevet med typsecript og derfor skal alle komponentene i storybook være typed.*
 
 ## Start Storybook
-For å starte prosjektet kjør ```yarn storybook```. Den skal starte på ```localhost:6006```.
+For å starte prosjektet kjør ```yarn storybook```. 
+Standard port for storybook er ```localhost:6006```.
 
-Nå har du siden kjørende og ser noe som ligner på dette:
- ![Storybook](public/storybook.png)
+#### Breakdown av storybook
+Under finner du et bilde av storybook og tabell med forklaring på de viktigste funksjonene til applikasjonen. 
+![Storybook](public/storybook.png)
  | 1. Søk | 2. Sidemeny | 3. Display | 4. Props |
  | - | - | - | - |
  | Her kan du søke på komponentene som har stories. | I sidemenyen ser du underkategoriene til komponentene som f.eks. "navigation". Der kan du finne alle komponenter som tilhører kategorien. | Her vises komponenten frem. Her kan du trykke, resize og generelt prøve ut komponenten og dens oppførsel. | Controls har oversikt over alle props som komponenten har. Her kan du fylle ut de ulike propsene og se hvordan komponenten kommer til å endre seg. |
@@ -73,10 +75,12 @@ src
 </details> 
 
 ## Stories
-For å se din komponent i Storybook må du lage ```**.stories.[tsx, mdx]``` aka en story. I denne filen kan du vise ulike props og deres virkning på komonenten. 
-Hvordan du skal bestemme om hvilke stories er lurt å lage finner du i denne artikkelen [her](https://storybook.js.org/blog/testing-composite-components/).
+For å vise komponenten i canvas til Storybook må man lage ```**.stories.[tsx, mdx]``` fil, aka en story. I denne filen kan du vise frem ulike props og deres hensikt i komponenten. 
 
-I dette avsnittet skal vi dekonstruere ```Card``` story filen.
+Det er lurt å lage ulike stories både for å vise funksjonaliteten til brukeren men også for å oppdage eventuelle feil eller mangler. Artikkelen [her](https://storybook.js.org/blog/testing-composite-components/) forklarer bra hvordan dette kan gjøres.
+
+#### Breakdown av en .stories fil
+Under er det en ```Card.stories.tsx``` fil.
 ```
 import React from 'react';
 import {Card} from '../components/Card';
@@ -95,31 +99,29 @@ export default {
     </div>
 ```
 
-#### Display i menyen  
-
-Første delen av filen er tittel og underkategori som blir vist i menyen ([punkt 2](public/storybook.png)):
+ **Part 1**
 ```
 export default {
      title: "Components/Card",
      component: Card 
  }
  ```
- Her er det 2 som er viktig; ```title``` og ```component``` 
-``` 
-title: "Components/Card 
-```  
+ Denne delen av koden kommer til å vises i sidemenyen av storybook ([punkt 2](public/storybook.png)).
+
 | title: "*Components*/** " | title: "**/*Card* " | component: Card |
 | - | - | - |
 | Underkategorien som komponenten skal ligge under | Navnet på komponenten som vises i menyen | Komponenten som blir importet og skal vises frem |
 | ![Kategori](public/Storybook-menu-underkategori.png) | ![Komponent](public/Storybook-menu-component.png) | ![Import](public/Card.png) |
 
-#### Forhåndsvisning
-Etter at man lager tittlen og importerer komponenten i filen som vises i sidemenyen skal vi vise den frem i Canvas ([punkt 3](public/storybook.png)).
+**Part 2**
+Man vil også gjerne vise frem komponenten og ikke bare at den finnes. For å lage en forhåndsvisning i canvas skal man lage en story.
 ``` 
  export const Default = (args) => <Card {...args}/>
  ``` 
-Underkapittelet til butten kommer nå til å hete ```Default```. Her vil komponenten få alle props med default verdier.
+Første story-en til Card kommer nå til å hete ```Default```. Her vil komponenten få alle props med default verdier.
 
+**Part 3**
+Dersom det finnes flere stories som er interessant å lage så er det bare å gjøre det! Under kan man se at Card har ulike størrelser og derfor har man laget story som viser frem 2 Card components, 1 med size={'small'} og en 1 med size={'large'}.
 ``` 
  export const Sizes = () => 
     <div>
@@ -127,9 +129,9 @@ Underkapittelet til butten kommer nå til å hete ```Default```. Her vil kompone
         <Card size="large" title={'title'} image={''} lastChanged={''} bulletinType={'event'} bulletinStatus={'draft'}/>
     </div>
 ```
-Her vil underkapittelet til ```Card``` være ```Sizes``` og de får inn andre verdier  enn de som er default i props og man kan se hvordan komponenten vil se ut dersom man endrer ```size``` prop.
+Her vil underkapittelet til ```Card``` være ```Sizes```. Noen av default props blir overskrevet.
 
-Dersom du vil lese mer om hvordan man kan manipulere eller endre visningen av props i stroybook besøk [Storybook args](https://storybook.js.org/docs/react/writing-stories/args)
+Dersom du vil lese mer om hvordan man kan manipulere eller endre visningen av props i storybook besøk [Storybook args](https://storybook.js.org/docs/react/writing-stories/args)
 
 ## Accessibility
 I samme panelet som props skal det være en tab kalt "Accessibility. Storybook har en a11y addon som kjører [Axe](https://github.com/dequelabs/axe-core). Den skal finne rundt 57% av WCAG feil automatisk. 
