@@ -1,5 +1,14 @@
 # Velkommen til innbyggerkontakt sin designsystem!
 
+**Innholdsfortegnelse**
+| Link | Beskrivelse |
+| - | - |
+| [Start Storybook](#start-storybook) | Hvordan man starter opp prosjektet og kjapp forklaring av nettsiden |
+| [Utvikling](#utvikling) | Forklaring på hvordan mappestrukturen er foreløpig og hva stories er |
+| [Stories](#stories) | Forklaring på hva stories er og hvordan de skal vises i [sidemenyen](#display-i-menyen). Der får man også forklart hvordan filen for [forhåndsvising](#forhåndsvisning) er strukturert. |
+| [Accessibility](#accessibility) | Forklaring på accessibility testing i storybook |
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 *Innbyggerkontakt er skrevet med typsecript og derfor skal alle komponentene i storybook være typed.*
@@ -14,7 +23,7 @@ Nå har du siden kjørende og ser noe som ligner på dette:
  | Her kan du søke på komponentene som har stories. | I sidemenyen ser du underkategoriene til komponentene som f.eks. "navigation". Der kan du finne alle komponenter som tilhører kategorien. | Her vises komponenten frem. Her kan du trykke, resize og generelt prøve ut komponenten og dens oppførsel. | Controls har oversikt over alle props som komponenten har. Her kan du fylle ut de ulike propsene og se hvordan komponenten kommer til å endre seg. |
  | - |  Under komponenten kan du se ulike variasjoner av den som f.eks "size". Der demonstreres ```size``` prop og hvordan den påvirker komponenten. | I menyen over har man ulike innstillinger som f.eks bakgrunnsfarge, grid med mål og docs for å se hvordan komponenten brukes. | På bildet kan du f.eks se at man kan velge ```size``` og at den har 3 typer størrelse: big, small og svg. |
 
-## Uvikling
+## Utvikling
 
 Det å lage komponenter i storybook er ikke noe forskjellig fra vanilla react. 
 Alle komponentene ligger i ```/components``` mappen. Tittelen på filen skal være det samme som navnet til komponenten.
@@ -42,9 +51,9 @@ export default {
     </div>
 ```
 
-### Display i menyen  
+#### Display i menyen  
 
-Første delen av filen er tittel og underkategori som blir vist i menyen ( se punkt 2, første bildet):
+Første delen av filen er tittel og underkategori som blir vist i menyen ([punkt 2](public/storybook.png)):
 ```
 export default {
      title: "Components/Card",
@@ -60,8 +69,8 @@ title: "Components/Card
 | Underkategorien som komponenten skal ligge under | Navnet på komponenten som vises i menyen | Komponenten som blir importet og skal vises frem |
 | ![Kategori](public/Storybook-menu-underkategori.png) | ![Komponent](public/Storybook-menu-component.png) | ![Import](public/Card.png) |
 
-### Display i Canvas
-Etter at man lager tittlen og importerer komponenten i filen som vises i sidemenyen skal vi vise den frem i Canvas (se punkt 3 \ref{Storybook}).
+#### Forhåndsvisning
+Etter at man lager tittlen og importerer komponenten i filen som vises i sidemenyen skal vi vise den frem i Canvas ([punkt 3](public/storybook.png)).
 ``` 
  export const Default = (args) => <Card {...args}/>
  ``` 
@@ -77,3 +86,8 @@ Underkapittelet til butten kommer nå til å hete ```Default```. Her vil kompone
 Her vil underkapittelet til ```Card``` være ```Sizes``` og de får inn andre verdier  enn de som er default i props og man kan se hvordan komponenten vil se ut dersom man endrer ```size``` prop.
 
 Dersom du vil lese mer om hvordan man kan manipulere eller endre visningen av props i stroybook besøk [Storybook args](https://storybook.js.org/docs/react/writing-stories/args)
+
+## Accessibility
+I samme panelet som props skal det være en tab kalt "Accessibility. Storybook har en a11y addon som kjører [Axe](https://github.com/dequelabs/axe-core). Den skal finne rundt 57% av WCAG feil automatisk. 
+
+*Utvidelsen på WCAG sjekk burde skje så fort som mulig*

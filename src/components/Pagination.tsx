@@ -72,6 +72,7 @@ export const Pagination = ({
   return (
     <StyledPagination>
       <Button
+        aria-label='Forrige side'
         onClick={(e) => {
           handlePageClickLeft && handlePageClickLeft(e);
           e.currentTarget.blur();
@@ -86,6 +87,7 @@ export const Pagination = ({
       </StyledP>
 
       <Button
+        aria-label='Neste side'
         onClick={(e) => {
           handlePageClickRight && handlePageClickRight(e);
           e.currentTarget.blur();

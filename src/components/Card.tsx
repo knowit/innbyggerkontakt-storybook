@@ -2,9 +2,13 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { color, typography } from '../..';
 
+interface ImageProps {
+    src: string,
+    text: string
+}
 interface CardProps {
     title: string;
-    image?: string;
+    image?: ImageProps;
     date?: string;
     lastChanged?: string;
     size: 'small' | 'large';
@@ -93,7 +97,7 @@ export const Card = ({date, lastChanged, size = 'small', title="Title", image, b
     return (
         <StyledCard size={size}>
             {image ? (
-                    <StyledImage src={image} size={size}/>
+                    <StyledImage src={image.src} size={size} alt={image.text}/>
                 ) : (
                     <EmptySVG size={size}><rect/></EmptySVG>
             )}
