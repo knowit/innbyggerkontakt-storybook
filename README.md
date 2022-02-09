@@ -1,10 +1,10 @@
 # Velkommen til innbyggerkontakt sin designsystem!
 
-**Innholdsfortegnelse**
+## Innholdsfortegnelse
 | Link | Beskrivelse |
 | - | - |
 | [Start Storybook](#start-storybook) | Hvordan man starter opp prosjektet og kjapp forklaring av nettsiden |
-| [Utvikling](#utvikling) | Forklaring på hvordan mappestrukturen er foreløpig og hva stories er |
+| [Mappestruktur](#mappestruktur) | Forklaring på hvordan mappestrukturen er foreløpig og hva stories er |
 | [Stories](#stories) | Forklaring på hva stories er og hvordan de skal vises i [sidemenyen](#display-i-menyen). Der får man også forklart hvordan filen for [forhåndsvising](#forhåndsvisning) er strukturert. |
 | [Accessibility](#accessibility) | Forklaring på accessibility testing i storybook |
 | [Nettside](#nettside) | Hvordan få opp og oppdatere nettsiden til designsystemet |
@@ -26,13 +26,52 @@ Nå har du siden kjørende og ser noe som ligner på dette:
  | Her kan du søke på komponentene som har stories. | I sidemenyen ser du underkategoriene til komponentene som f.eks. "navigation". Der kan du finne alle komponenter som tilhører kategorien. | Her vises komponenten frem. Her kan du trykke, resize og generelt prøve ut komponenten og dens oppførsel. | Controls har oversikt over alle props som komponenten har. Her kan du fylle ut de ulike propsene og se hvordan komponenten kommer til å endre seg. |
  | - |  Under komponenten kan du se ulike variasjoner av den som f.eks "size". Der demonstreres ```size``` prop og hvordan den påvirker komponenten. | I menyen over har man ulike innstillinger som f.eks bakgrunnsfarge, grid med mål og docs for å se hvordan komponenten brukes. | På bildet kan du f.eks se at man kan velge ```size``` og at den har 3 typer størrelse: big, small og svg. |
 
-## Utvikling
+## Mappestruktur
+```
+src
+|---- commom
+|---- components 
+|---- images
+|---- stories 
+|---- tests
+```
+<details>
+    <summary> common </summary>
 
-Det å lage komponenter i storybook er ikke noe forskjellig fra vanilla react. 
-Alle komponentene ligger i ```/components``` mappen. Tittelen på filen skal være det samme som navnet til komponenten.
-Dersom stylingen skal være påvirket av props så det det lettest å holde styling og koden til komponenten i samme fil. 
-Der kan du også lage egendefinerte props og styling. 
-Gode og enkle eksempler er ```RadioButton``` og ```Button```.  
+    Her vil du legge til alle konstanter som skal/kan gjenbrukes i andre filer.  
+    Det kan for eksempel være farger eller font størrelser
+</details> 
+
+<details>
+    <summary> components </summary>
+
+    Det å lage komponenter i storybook er ikke noe forskjellig fra vanilla react.  
+    Alle komponentene ligger i ```/components``` mappen.  
+    Tittelen på filen skal være det samme som navnet til komponenten.  
+    Dersom stylingen skal være påvirket av props så det det lettest å holde styling og koden til komponenten i samme fil.  
+    Der kan du også lage egendefinerte props og styling. 
+    Gode og enkle eksempler er ```RadioButton``` og ```Button```.  
+</details>
+
+<details>
+    <summary> images </summary>
+
+    Sier seg selv, her skal bildene/svg blir lagret.
+    Dersom man trenger å bruke svg som en komponent er det anbefat å bruke svgr i command line.
+</details>  
+
+<details>
+    <summary> stories </summary>
+
+    Sier seg selv, her skal stories til komponentene blir laget.
+</details>
+
+<details>
+    <summary> test </summary>
+
+    well, u know the drill.
+</details> 
+
 ## Stories
 For å se din komponent i Storybook må du lage ```**.stories.[tsx, mdx]``` aka en story. I denne filen kan du vise ulike props og deres virkning på komonenten. 
 Hvordan du skal bestemme om hvilke stories er lurt å lage finner du i denne artikkelen [her](https://storybook.js.org/blog/testing-composite-components/).

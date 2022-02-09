@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography } from '../..';
+import { color, typography } from '../common';
 
 interface ImageProps {
     src: string,
