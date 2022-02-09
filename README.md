@@ -5,7 +5,7 @@
 | - | - |
 | [Start Storybook](#start-storybook) | Hvordan man starter opp prosjektet og kjapp forklaring av nettsiden |
 | [Mappestruktur](#mappestruktur) | Forklaring på hvordan mappestrukturen er foreløpig og hva stories er |
-| [Stories](#stories) | Forklaring på hva stories er og hvordan de skal vises i [sidemenyen](#display-i-menyen). Der får man også forklart hvordan filen for [forhåndsvising](#forhåndsvisning) er strukturert. |
+| [Stories](#stories) | Forklaring på hva stories er og hvordan de skal vises i sidemenyen. Der får man også forklart hvordan filen for forhåndsvising er strukturert. |
 | [Accessibility](#accessibility) | Forklaring på accessibility testing i storybook |
 | [Nettside](#nettside) | Hvordan få opp og oppdatere nettsiden til designsystemet |
 | [NPM Publish](#npm-publish) | Hvordan publishe pakken |
