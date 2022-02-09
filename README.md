@@ -32,7 +32,9 @@ Der kan du også lage egendefinerte props og styling.
 Gode og enkle eksempler er ```RadioButton``` og ```Button```.  
 ## Stories
 For å se din komponent i Storybook må du lage ```**.stories.[tsx, mdx]``` aka en story. I denne filen kan du vise ulike props og deres virkning på komonenten. 
-Her skal vi dekonstruere ```Card``` storyen.
+Hvordan du skal bestemme om hvilke stories er lurt å lage finner du i denne artikkelen [her](https://storybook.js.org/blog/testing-composite-components/).
+
+I dette avsnittet skal vi dekonstruere ```Card``` story filen.
 ```
 import React from 'react';
 import {Card} from '../components/Card';
@@ -91,3 +93,7 @@ Dersom du vil lese mer om hvordan man kan manipulere eller endre visningen av pr
 I samme panelet som props skal det være en tab kalt "Accessibility. Storybook har en a11y addon som kjører [Axe](https://github.com/dequelabs/axe-core). Den skal finne rundt 57% av WCAG feil automatisk. 
 
 *Utvidelsen på WCAG sjekk burde skje så fort som mulig*
+
+## Todo
+- [ ] [Jest tester](https://storybook.js.org/blog/testing-component-interactions/)
+- [ ] [ Accessibility tester](https://storybook.js.org/blog/accessibility-testing-with-storybook/)
