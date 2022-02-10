@@ -4,7 +4,7 @@ import { color, typography } from '../common/index';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   text?: React.ReactNode;
-  size?: 'big' | 'small' | 'svg';
+  size?: 'big' | 'small';
   svg?: 'left' | 'right';
   variant?: 'rounded' | 'square';
   type?: 'button' | 'submit' | 'reset'
@@ -112,6 +112,9 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     props.size === 'big' &&
     `
       padding: 16px 24px;
+      &:hover {
+        padding: 16px 23px;
+      }
    
   `}
 
@@ -119,13 +122,9 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     props.size === 'small' &&
     `
       padding: 10px 25px;
-
-  `}
-  ${(props) =>
-    props.size === 'svg' &&
-    `
-      padding: 6px 16px;
-
+      &:hover {
+        padding: 10px 23px;
+      }
   `}
 
 ${(props) =>
@@ -194,7 +193,7 @@ ${(props) =>
     border-color: ${color.brightBlue};
     
     &:hover{
-      border-width: 3px;
+        border-width: 3px;
     }
     &:focus{
         background-color: transparent;
@@ -204,12 +203,25 @@ ${(props) =>
         outline: none;
     }
     &:active{
-      background-color: transparent;
-      color: ${color.darkBrightBlue};
-      border-color: ${color.darkBrightBlue};
-      border-width: 4px;
+        background-color: transparent;
+        color: ${color.darkBrightBlue};
+        border-color: ${color.darkBrightBlue};
+        border-width: 4px;
     }
   `}
+  ${(props) => props.color === 'tertiary' && props.size === 'small' && 
+    `
+    padding: 10px 25px;
+    &:hover {
+      padding: 9px 22px;
+    }
+    &:focus{
+      padding: 8px 22px;
+    }
+    &:active{
+      padding: 8px 20px;
+    }
+    `}
 
   ${(props) =>
     props.color === 'mint' &&

@@ -1,70 +1,63 @@
 import React from 'react';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import { KeyboardArrowLeft } from '@mui/icons-material';
+import { ComponentStory } from '@storybook/react';
 import { Button, ButtonProps } from '../components/Button';
+import { Next } from '../images';
 
 export default {
   title: 'Navigation/Button',
   component: Button,
-};
+  argTypes: {
+    boxShadow: {
+      options: [true, false],
+      control: {type: 'boolean'}
+    }
+  } 
+}
 
-export const Default = (args: ButtonProps) => <Button {...args}>Button text</Button>;
-Default.args = { children: 'Label' };
+const Default: ComponentStory<typeof Button> = (args: ButtonProps) => <Button {...args}>Button text</Button>;
 
-export const Svg = (args: ButtonProps) => (
+export const Variant = Default.bind({})
+Variant.args = { variant: 'square' }
+
+export const Color = Default.bind({})
+Color.args = { color: 'primary'}
+Color.decorators = [
+  () => {
+    return (
+      <>
+      <Button {...Color.args as ButtonProps} color="primary">Button</Button>
+      <Button {...Color.args as ButtonProps} color="secondary">Button</Button>
+      <Button {...Color.args as ButtonProps} color="tertiary">Button</Button>
+      <Button {...Color.args as ButtonProps} color="mint">Button</Button>
+      </>
+    )
+  }
+]
+
+export const Sizes = Default.bind({})
+Sizes.args = { size: 'small'}
+
+export const Material = (args: ButtonProps) => (
   <div style={{ marginRight: '10px', display: 'flex', alignItems: 'center' }}>
-    <Button size={args.size} svg={args.svg} variant={args.variant} style={{ marginRight: '10px' }}>
-      Button text
-      <KeyboardArrowRight />
+    <Button style={{ marginRight: '10px' }}>
+      Imported svg  
+      <Next style={{display: 'inline-block',
+      shapeRendering: 'inherit',
+      transform: 'translate3d(0, 0, 0)',
+      verticalAlign: 'middle',
+      height: '0.75rem',
+      marginLeft: '10px'
+      }} />
     </Button>
+    <Button {...args} style={{ marginRight: '10px' }}><KeyboardArrowLeft/>Material ui svg</Button>
     <Button>Button text</Button>
   </div>
 );
-
-export const All = () => (
-  <>
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-      <Button color="primary">Primary</Button>
-      <Button color="secondary">Secondary</Button>
-      <Button color="tertiary">Tertiary</Button>
-      <Button color="mint">Mint</Button>
-    </div>
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-      <Button variant="rounded">Primary Rounded</Button>
-      <Button variant="rounded" color="secondary">
-        Secondary Rounded
-      </Button>
-      <Button variant="rounded" color="tertiary">
-        Tertiary Rounded
-      </Button>
-    </div>
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-      <Button boxShadow={true}>Primary Boxshadow</Button>
-      <Button boxShadow={true} color="secondary">
-        Secondary Boxshadow
-      </Button>
-      <Button boxShadow={true} color="mint">
-        Mint Boxshadow
-      </Button>
-    </div>
-    <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-      <Button size="svg" svg="left" style={{ marginRight: '10px' }}>
-        <KeyboardArrowLeft />
-        Icon left
-      </Button>
-      <Button size="svg" svg="right">
-        Icon right
-        <KeyboardArrowRight />
-      </Button>
-    </div>
-  </>
-);
-
-export const Sizes = () => (
-  <>
-    <Button>Default</Button>
-    <Button size="big">Big size</Button>
-  </>
-);
+Material.args = {
+  svg:'left', 
+  variant: 'square'
+}
 
 export const Disabled = () => (
   <>
