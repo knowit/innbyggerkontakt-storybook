@@ -18,7 +18,7 @@
     "@ibm/plex": "^6.0.0",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.8",
-    "@storybook/theming": "^6.4.18",
+    "@storybook/theming": "^6.4.19",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -45,6 +45,10 @@
     "build-storybook": "build-storybook -s public",
     "prebuild": "rimraf dist",
     "chromatic": "npx chromatic --project-token=f2accc003df4"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "**/trim": "^1.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -75,16 +79,16 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.4.18",
-    "@storybook/addon-actions": "^6.4.18",
-    "@storybook/addon-essentials": "^6.4.18",
-    "@storybook/addon-links": "^6.4.18",
-    "@storybook/builder-webpack5": "^6.4.18",
-    "@storybook/manager-webpack5": "^6.4.18",
-    "@storybook/node-logger": "^6.4.18",
+    "@storybook/addon-a11y": "^6.4.19",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/node-logger": "^6.4.19",
     "@storybook/preset-create-react-app": "^4.0.1",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.4.18",
+    "@storybook/react": "^6.4.19",
     "@storybook/testing-react": "^1.2.3",
     "@svgr/cli": "^6.2.1",
     "@types/jest-axe": "^3.5.3",

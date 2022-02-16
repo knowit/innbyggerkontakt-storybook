@@ -50,6 +50,7 @@ const StyledSpan = styled.span<Pick<StylingProps, 'fontSize' | 'fontWeight'>>`
 `;
 
 const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg' | 'variant' | 'color' | 'boxShadow'>>`
+  cursor: pointer;
   span,
   svg {
     display: flex;
