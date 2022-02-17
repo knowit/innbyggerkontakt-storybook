@@ -15,9 +15,10 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export interface InputProps {
   id?: string;
-  type: string;
+  type?: string;
   value?: string;
   label: string;
+  ariaLabel: string;
   className?: string;
   helperText?: string;
   labelIcon?: ReactNode;
@@ -149,6 +150,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
       error = false,
       helperText,
       hideLabel = false,
+      ariaLabel,
       icon,
       label,
       labelIcon,
@@ -210,6 +212,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
           )}
           <InputEl
             id={id}
+            aria-label={ariaLabel}
             // Pass the ref to the actual input element so it can be controlled
             // externally.
             ref={ref}
