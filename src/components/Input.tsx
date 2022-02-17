@@ -14,7 +14,7 @@ import { color, typography } from '../common';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 export interface InputProps {
-  id?: string;
+  id: string;
   type?: string;
   value?: string;
   label: string;
@@ -212,13 +212,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
           )}
           <InputEl
             id={id}
-            aria-label={ariaLabel}
             // Pass the ref to the actual input element so it can be controlled
             // externally.
             ref={ref}
             value={value}
             type={type === 'password' ? pwd : type}
-            aria-describedby={errorId}
             aria-invalid={!!error}
             {...props}
           />

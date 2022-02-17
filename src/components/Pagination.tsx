@@ -78,8 +78,9 @@ export const Pagination = ({
           e.currentTarget.blur();
         }}
         disabled={disabledLeft}
+        id="forrgieSide"
       >
-        <Previous/>
+        <Previous aria-labelledby='forrigeSideButton'/>
       </Button>
 
       <StyledP>
@@ -93,8 +94,9 @@ export const Pagination = ({
           e.currentTarget.blur();
         }}
         disabled={disabledRight}
+        id="nesteSide"
       >
-        <Next/>
+        <Next aria-labelledby='nesteSideButton'/>
       </Button>
     </StyledPagination>
   );

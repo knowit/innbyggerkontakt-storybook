@@ -5,6 +5,7 @@ import { ReactComponent as InfoComponent} from '../images/info.svg';
 import { Button } from './';
 import { color, typography } from '../common';
 export interface PopupProps {
+    consent?: true | false;
     childComponent?: ReactNode;
     componentView?: 'vertical' | 'horizontal';
     infoText: string ;
@@ -65,18 +66,18 @@ const StyledButtonWrapper = styled.div`
     display: flex;
     gap: 1.5rem;
 `
-export const Popup: React.FC<PopupProps> = ({infoText, childComponent, componentView="horizontal", onClose, onCancel, onSave}) => {
+export const Popup: React.FC<PopupProps> = ({consent=false, infoText, childComponent, componentView="horizontal", onClose, onCancel, onSave}) => {
     return (
         <StyledPopup>
-            <ClearComponent className='clearSvg' onClick={onClose}/>
-            <InfoComponent className='infoSvg' />
+            <ClearComponent className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
+            <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
             <StyledInfoText>{infoText}</StyledInfoText>
             <StyledComponentWrapper componentView={componentView} >
                 {childComponent}
             </StyledComponentWrapper>
             <StyledButtonWrapper>
-                <Button color='tertiary' onClick={onCancel}>Avbryt</Button>
-                <Button onClick={onSave}>Endre likevel</Button>
+                <Button color='tertiary' onClick={onCancel}>{consent ? 'Avslå' : 'Avbryt'}</Button>
+                <Button onClick={onSave}>{consent ? 'Gi tilgang' : 'Endre likevel'}</Button>
             </StyledButtonWrapper>
         </StyledPopup>
     )
