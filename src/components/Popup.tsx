@@ -72,9 +72,9 @@ export const Popup: React.FC<PopupProps> = ({consent=false, infoText, childCompo
             <ClearComponent className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
             <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
             <StyledInfoText>{infoText}</StyledInfoText>
-            <StyledComponentWrapper componentView={componentView} >
+            {childComponent && <StyledComponentWrapper componentView={componentView} >
                 {childComponent}
-            </StyledComponentWrapper>
+            </StyledComponentWrapper>}
             <StyledButtonWrapper>
                 <Button color='tertiary' onClick={onCancel}>{consent ? 'Avslå' : 'Avbryt'}</Button>
                 <Button onClick={onSave}>{consent ? 'Gi tilgang' : 'Endre likevel'}</Button>
