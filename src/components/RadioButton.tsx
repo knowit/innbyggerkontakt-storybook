@@ -4,16 +4,16 @@ import { typography } from '../common';
 
 export interface RadioButtonProps {
   id?: string;
-  value?: string;
-  label?: string;
+  value: string;
+  label: string;
   className?: string;
 }
 
-const Label = styled.label`
+export const Label = styled.label`
   cursor: pointer;
   font-family: ${typography.type.primary};
-  font-size: ${typography.size.px18};
-  font-weight: ${typography.weight.bold};
+  font-size: ${typography.size.px18}px;
+  font-weight: ${typography.weight.regular};
   position: relative;
   display: flex;
   align-items: center;
@@ -21,12 +21,12 @@ const Label = styled.label`
 
 const RadioWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
 `;
 
 const Input = styled.input<RadioButtonProps>`
-  margin-right: 10px;
+  margin: 0 10px 0 0;
   transform: scale(1.3);
 `;
 
@@ -39,8 +39,8 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
 }) => {
   return (
     <RadioWrapper>
-      <Input type="radio" id={id} className={className} value={value} {...props} />
-      <Label>{label}</Label>
+      <Input label={label} type="radio" id={id} className={className} value={value} {...props} />
+      <Label htmlFor={id}>{label}</Label>
     </RadioWrapper>
   );
 };
