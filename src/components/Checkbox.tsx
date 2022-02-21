@@ -8,7 +8,7 @@ const StyledCheckboxWrapper = styled.div`
 `
 
 const StyledCheckbox = styled.input`
-    margin: 0 10px 0 0;
+    margin-right: 20px;
     transform: scale(1.3);
 `
 export const Checkbox: React.FC<RadioButtonProps> = ({ 

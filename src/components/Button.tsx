@@ -63,12 +63,12 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     border-color: ${color.grayBorder};
     box-shadow: none;
     cursor: not-allowed !important;
-    &:hover {
-      background-color: ${color.grayBorder};
-      color: ${color.white};
-      border-color: ${color.grayBorder};
-      border-width: 2px;
-      transform: none;
+  &:hover {
+    background-color: ${color.grayBorder};
+    color: ${color.white};
+    border-color: ${color.grayBorder};
+    border-width: 2px;
+    transform: none;
     }
   }
 
@@ -123,9 +123,6 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     props.size === 'small' &&
     `
       padding: 10px 25px;
-      &:hover {
-        padding: 10px 23px;
-      }
   `}
 
 ${(props) =>

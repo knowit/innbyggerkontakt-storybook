@@ -15,17 +15,20 @@ export interface ConsentProps {
 
 const StyledPopup = styled.div
 `   
+    font-family: ${typography.type.primary};
     display: grid;
     justify-items: start;
     background-color: white;
-    padding: 40px;
+    padding: 2.5rem;
     max-width: 62rem;
-    box-shadow: 0px 2px 5px 0px ${color.borderShadow};
+    border-radius: 2px;
+    box-shadow: 0px 4px 4px ${color.borderShadow};
     .clearSvg{
         justify-self: end;
         cursor: pointer;
     }
     .infoSvg {
+        margin-bottom: 2rem;
         height: 2.5rem;
         width: 2.5rem;
         path{
@@ -33,12 +36,15 @@ const StyledPopup = styled.div
         }
     }
 `
-const StyledHeader = styled.span`
-    margin: 2rem 0rem 2rem 0rem;
+const Wrapper = styled.div`
+    padding: 0.5rem;
+`
+
+const StyledHeader = styled.h1`
     font-weight: ${typography.weight.extrabold};
     font-size: ${typography.size.px24}px;
 `
-const StyledInfoText = styled.span`
+const StyledInfoText = styled.p`
     font-family: ${typography.type.primary};
     font-size: ${typography.size.px14}px;
 `
@@ -48,27 +54,30 @@ const ConsentBox = styled.div`
     row-gap: 1rem;
     border: dashed ${color.brightBlue} 1px;
     border-radius: 2px;
-    padding: 1.75rem;
+    padding: 2rem 1.75rem;
     width: calc(100% - 60px);
     margin: 2rem 0rem;
 `
 
 const StyledButtonWrapper = styled.div`
     justify-self: end;
+    margin-right: 0.5rem;
 `
 export const ConsentModal: React.FC<ConsentProps> = ({ consentComponent, headerText, infoText, onClose, onSave}) => {
     return (
         <StyledPopup>
             <ClearComponent className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
-            <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
-            <StyledHeader>{headerText}</StyledHeader>
-            <StyledInfoText>{infoText}</StyledInfoText>
-            <ConsentBox>
-                {consentComponent}
-            </ConsentBox>
-            <StyledButtonWrapper>
-                <Button onClick={onSave}>Lagre</Button>
-            </StyledButtonWrapper>
+            <Wrapper>
+                <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
+                <StyledHeader>{headerText}</StyledHeader>
+                <StyledInfoText>{infoText}</StyledInfoText>
+                <ConsentBox>
+                    {consentComponent}
+                </ConsentBox>
+            </Wrapper>
+                <StyledButtonWrapper>
+                    <Button onClick={onSave}>Lagre</Button>
+                </StyledButtonWrapper>
         </StyledPopup>
     )
 }

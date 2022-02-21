@@ -17,5 +17,5 @@ const Default = (args: ConsentProps) => <ConsentModal
 export const PopupWithText = Default.bind({});
 PopupWithText.args = { 
     headerText: 'Dette er en headerText',
-    infoText: 'Dette her er random eksempel infotekst. Den eneste hunden som ikke har rosa tunge er chow.', 
+    infoText: 'KF bruker statistikkverktøy for anonymisert brukerinnsikt med formål om å evaluere effektiviteten og produktiviteten i løsningen. Analyse av statistikken vil gjøre det mulig for KF å forbedre funksjonalitet, bruker- vennlighet og innhold. Dersom du ikke ønsker å delta i innsamling av anonyme data, fjerner du haken i boksen under.', 
 }
