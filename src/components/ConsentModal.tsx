@@ -5,6 +5,7 @@ import { Button} from './';
 import { color, typography } from '../common';
 
 export interface ConsentProps {
+    className?: string;
     consentComponent: ReactNode;
     infoText: string ;
     headerText: string;
@@ -64,9 +65,9 @@ const StyledButtonWrapper = styled.div`
     justify-self: end;
     margin-right: 0.5rem;
 `
-export const ConsentModal: React.FC<ConsentProps> = ({ consentComponent, headerText, infoText, onClose, onSave}) => {
+export const ConsentModal: React.FC<ConsentProps> = ({ consentComponent, className, headerText, infoText, onClose, onSave}) => {
     return (
-        <StyledPopup>
+        <StyledPopup className={className}>
             <Clear className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
             <Wrapper>
                 <Info className='infoSvg' aria-label="Information sign" title="information"/>
