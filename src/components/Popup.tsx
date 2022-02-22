@@ -1,9 +1,8 @@
 import React, { ReactNode } from 'react';
 import { styled } from '@storybook/theming';
-import { ReactComponent as ClearComponent }  from '../images/clear.svg';
-import { ReactComponent as InfoComponent} from '../images/info.svg';
 import { Button } from './';
 import { color, typography } from '../common';
+import { Clear, Info } from '../images';
 export interface PopupProps {
     consent?: true | false;
     childComponent?: ReactNode;
@@ -30,6 +29,7 @@ const StyledPopup = styled.div
     .clearSvg{
         justify-self: end;
         cursor: pointer;
+        height: 0.875rem;
     }
     .infoSvg {
         height: 2.5rem;
@@ -69,8 +69,8 @@ const StyledButtonWrapper = styled.div`
 export const Popup: React.FC<PopupProps> = ({consent=false, infoText, childComponent, componentView="horizontal", onClose, onCancel, onSave}) => {
     return (
         <StyledPopup>
-            <ClearComponent className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
-            <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
+            <Clear className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
+            <Info className='infoSvg' aria-label="Information sign" title="information"/>
             <StyledInfoText>{infoText}</StyledInfoText>
             {childComponent && <StyledComponentWrapper componentView={componentView} >
                 {childComponent}
