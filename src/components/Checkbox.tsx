@@ -24,7 +24,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
     return (
         <StyledCheckboxWrapper>
-            <StyledCheckbox type="checkbox" id={id} className={className} value={value} {...props}/>
+            <StyledCheckbox type="checkbox" id={id} checked={checked} className={className} value={value} {...props}/>
             <Label htmlFor={id}>{label}</Label>
         </StyledCheckboxWrapper>
 
