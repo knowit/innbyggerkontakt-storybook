@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import { styled } from '@storybook/theming';
-import { ReactComponent as ClearComponent }  from '../images/clear.svg';
-import { ReactComponent as InfoComponent} from '../images/info.svg';
-import { Button, Checkbox } from './';
+import { Clear, Info } from '../images';
+import { Button} from './';
 import { color, typography } from '../common';
 
 export interface ConsentProps {
@@ -26,6 +25,7 @@ const StyledPopup = styled.div
     .clearSvg{
         justify-self: end;
         cursor: pointer;
+        height: 0.875rem;
     }
     .infoSvg {
         margin-bottom: 2rem;
@@ -66,9 +66,9 @@ const StyledButtonWrapper = styled.div`
 export const ConsentModal: React.FC<ConsentProps> = ({ consentComponent, headerText, infoText, onClose, onSave}) => {
     return (
         <StyledPopup>
-            <ClearComponent className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
+            <Clear className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
             <Wrapper>
-                <InfoComponent className='infoSvg' aria-label="Information sign" title="information"/>
+                <Info className='infoSvg' aria-label="Information sign" title="information"/>
                 <StyledHeader>{headerText}</StyledHeader>
                 <StyledInfoText>{infoText}</StyledInfoText>
                 <ConsentBox>
