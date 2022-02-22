@@ -50,6 +50,7 @@ const StyledInfoText = styled.p`
 `
 
 const ConsentBox = styled.div`
+    font-size: ${typography.size.px14}px;
     display: grid;
     row-gap: 1rem;
     border: dashed ${color.brightBlue} 1px;
