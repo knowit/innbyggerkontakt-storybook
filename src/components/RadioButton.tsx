@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { styled } from '@storybook/theming';
 import { typography } from '../common';
 
-export interface RadioButtonProps {
+export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'>{
   id?: string;
-  value: string;
+  value?: string;
   label: string;
   className?: string;
 }
