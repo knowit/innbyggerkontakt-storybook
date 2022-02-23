@@ -14,8 +14,8 @@ const Default = (args: ConsentProps) => <ConsentModal
         <Checkbox value={'value'} label={'Label'} /></>} 
     {...args} />
 
-export const PopupWithText = Default.bind({});
-PopupWithText.args = { 
-    headerText: 'Dette er en headerText',
-    infoText: 'KF bruker statistikkverktøy for anonymisert brukerinnsikt med formål om å evaluere effektiviteten og produktiviteten i løsningen. Analyse av statistikken vil gjøre det mulig for KF å forbedre funksjonalitet, bruker- vennlighet og innhold. Dersom du ikke ønsker å delta i innsamling av anonyme data, fjerner du haken i boksen under.', 
+export const ConsentText = Default.bind({});
+ConsentText.args = { 
+    headerText: 'Cookies',
+    infoText: 'Når du besøker denne siden, vil vi gjerne samle inn data dersom du gir oss tillatelse til det.', 
 }

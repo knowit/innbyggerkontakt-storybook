@@ -31,9 +31,3 @@ export const PopupWithMultiComponents = PopupWithMoreComponents.bind({});
 PopupWithMultiComponents.args = {
     ...PopupWithText.args,
 }
-
-export const ConsentPopup = Default.bind({});
-ConsentPopup.args = {
-    ...PopupWithText.args,
-    consent: true,
-}

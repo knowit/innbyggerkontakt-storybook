@@ -23,13 +23,7 @@ const StyledPopup = styled.div
     max-width: 62rem;
     border-radius: 2px;
     box-shadow: 0px 4px 4px ${color.borderShadow};
-    .clearSvg{
-        justify-self: end;
-        cursor: pointer;
-        height: 0.875rem;
-    }
     .infoSvg {
-        margin-bottom: 2rem;
         height: 2.5rem;
         width: 2.5rem;
         path{
@@ -39,15 +33,12 @@ const StyledPopup = styled.div
 `
 const Wrapper = styled.div`
     padding: 0.5rem;
+    width: calc(100% - 1rem);
 `
 
 const StyledHeader = styled.h1`
     font-weight: ${typography.weight.extrabold};
     font-size: ${typography.size.px24}px;
-`
-const StyledInfoText = styled.p`
-    font-family: ${typography.type.primary};
-    font-size: ${typography.size.px14}px;
 `
 
 const ConsentBox = styled.div`
@@ -57,28 +48,26 @@ const ConsentBox = styled.div`
     border: dashed ${color.brightBlue} 1px;
     border-radius: 2px;
     padding: 2rem 1.75rem;
-    width: calc(100% - 60px);
-    margin: 2rem 0rem;
+    margin-bottom: 1rem;
+    width: calc(100% - 58px);
 `
 
 const StyledButtonWrapper = styled.div`
     justify-self: end;
-    margin-right: 0.5rem;
+    display: flex;
+    column-gap: 1rem;
 `
-export const ConsentModal: React.FC<ConsentProps> = ({ consentComponent, className, headerText, infoText, onClose, onSave}) => {
+export const ConsentModal: React.FC<ConsentProps> = ({ className, headerText, infoText, onClose, onSave}) => {
     return (
         <StyledPopup className={className}>
-            <Clear className='clearSvg' onClick={onClose} aria-label="Close sign" title='close'/>
-            <Wrapper>
                 <Info className='infoSvg' aria-label="Information sign" title="information"/>
                 <StyledHeader>{headerText}</StyledHeader>
-                <StyledInfoText>{infoText}</StyledInfoText>
                 <ConsentBox>
-                    {consentComponent}
+                    {infoText}
                 </ConsentBox>
-            </Wrapper>
                 <StyledButtonWrapper>
-                    <Button onClick={onSave}>Lagre</Button>
+                    <Button color="tertiary" onClick={onClose}>Kun nødvendige</Button>
+                    <Button onClick={onSave}>Aksepter alle</Button>
                 </StyledButtonWrapper>
         </StyledPopup>
     )
