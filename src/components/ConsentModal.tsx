@@ -24,6 +24,7 @@ const StyledPopup = styled.div
     box-shadow: 0px 4px 4px ${color.borderShadow};
     .infoSvg {
         height: 2rem;
+        width: 100%;
         path{
             fill: ${color.brightBlue};
         }
