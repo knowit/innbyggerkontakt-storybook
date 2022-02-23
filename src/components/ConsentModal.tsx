@@ -44,8 +44,6 @@ const StyledHeader = styled.span`
 
 const ConsentBox = styled.div`
     font-size: ${typography.size.px14}px;
-    display: grid;
-    row-gap: 1rem;
     border: dashed ${color.brightBlue} 1px;
     border-radius: 2px;
     padding: 2rem 1.75rem;
