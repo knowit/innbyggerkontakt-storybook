@@ -6,8 +6,7 @@ import { color, typography } from '../common';
 
 export interface ConsentProps {
     className?: string;
-    consentComponent: ReactNode;
-    infoText: string ;
+    infoText: ReactNode;
     headerText: string;
     onClose: () => void;
     onSave: () => void;
@@ -24,19 +23,20 @@ const StyledPopup = styled.div
     border-radius: 2px;
     box-shadow: 0px 4px 4px ${color.borderShadow};
     .infoSvg {
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 2rem;
         path{
             fill: ${color.brightBlue};
         }
     }
 `
 const Wrapper = styled.div`
-    padding: 0.5rem;
-    width: calc(100% - 1rem);
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
 `
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled.span`
     font-weight: ${typography.weight.extrabold};
     font-size: ${typography.size.px24}px;
 `
@@ -60,8 +60,10 @@ const StyledButtonWrapper = styled.div`
 export const ConsentModal: React.FC<ConsentProps> = ({ className, headerText, infoText, onClose, onSave}) => {
     return (
         <StyledPopup className={className}>
+            <Wrapper>
                 <Info className='infoSvg' aria-label="Information sign" title="information"/>
                 <StyledHeader>{headerText}</StyledHeader>
+            </Wrapper>
                 <ConsentBox>
                     {infoText}
                 </ConsentBox>
