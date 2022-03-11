@@ -21,6 +21,9 @@ const StyledMessage = styled.div<Pick<ErrorMessageProps, 'color'>>`
   svg {
     height: 0.875rem;
     min-width: 0.875rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
   max-height: 6.4rem;
   padding: 1.5rem;
