@@ -3,19 +3,19 @@ module.exports = {
   svgoConfig: {
     plugins: [
       {
-        name: "preset-default",
+        name: 'preset-default',
         params: {
           overrides: {
             removeViewBox: false,
           },
         },
       },
-      "prefixIds",
-      "removeDimensions",
+      'prefixIds',
+      'removeDimensions',
     ],
   },
   svgProps: {
-    role: "img",
+    role: 'img',
   },
   titleProp: true,
   typescript: false,

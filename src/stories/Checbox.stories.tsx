@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Checkbox } from '../components';
 import { RadioButtonProps } from '../components/RadioButton';
 
@@ -7,8 +8,8 @@ export default {
   component: Checkbox,
 };
 
-export const Default = (args: RadioButtonProps) => <Checkbox {...args}/>;
+export const Default = (args: RadioButtonProps) => <Checkbox {...args} />;
 Default.args = {
   label: 'Label',
   value: 'Value',
-}
+};

@@ -1,5 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react';
+
 import { styled } from '@storybook/theming';
+
 import { color, typography } from '../common/index';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
@@ -7,7 +9,7 @@ export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: 'big' | 'small';
   svg?: 'left' | 'right';
   variant?: 'rounded' | 'square';
-  type?: 'button' | 'submit' | 'reset'
+  type?: 'button' | 'submit' | 'reset';
   fontWeight?: 'regular' | 'bold' | 'extrabold';
   color?: 'primary' | 'secondary' | 'tertiary' | 'mint';
   fontSize?: 'px11' | 'px14' | 'px18' | 'px24' | 'px48';
@@ -24,7 +26,9 @@ interface StylingProps {
   boxShadow: boolean;
 }
 
+//text inside button
 const StyledSpan = styled.span<Pick<StylingProps, 'fontSize' | 'fontWeight'>>`
+  font-family: ${typography.type.primary};
   ${(props) =>
     props.fontSize &&
     `
@@ -63,12 +67,12 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     border-color: ${color.grayBorder};
     box-shadow: none;
     cursor: not-allowed !important;
-  &:hover {
-    background-color: ${color.grayBorder};
-    color: ${color.white};
-    border-color: ${color.grayBorder};
-    border-width: 2px;
-    transform: none;
+    &:hover {
+      background-color: ${color.grayBorder};
+      color: ${color.white};
+      border-color: ${color.grayBorder};
+      border-width: 2px;
+      transform: none;
     }
   }
 
@@ -207,7 +211,9 @@ ${(props) =>
         border-width: 4px;
     }
   `}
-  ${(props) => props.color === 'tertiary' && props.size === 'small' && 
+  ${(props) =>
+    props.color === 'tertiary' &&
+    props.size === 'small' &&
     `
     padding: 10px 25px;
     &:hover {
@@ -302,6 +308,7 @@ export const Button = ({
       variant={variant}
       size={size}
       svg={svg}
+      type={type}
       boxShadow={boxShadow}
       {...props}
     >

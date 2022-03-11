@@ -1,8 +1,10 @@
 import React, { ComponentPropsWithoutRef } from 'react';
+
 import { styled } from '@storybook/theming';
+
 import { typography } from '../common';
 
-export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'>{
+export interface RadioButtonProps extends ComponentPropsWithoutRef<'input'> {
   id?: string;
   value?: string;
   label: string;
@@ -39,8 +41,10 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
 }) => {
   return (
     <RadioWrapper>
-      <Input label={label} type="radio" id={id} className={className} value={value} {...props} />
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id}>
+        <Input label={label} type="radio" id={id} className={className} value={value} {...props} />
+        {label}
+      </Label>
     </RadioWrapper>
   );
 };

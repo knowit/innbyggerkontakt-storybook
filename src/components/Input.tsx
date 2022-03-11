@@ -9,16 +9,17 @@ import React, {
   useCallback,
   SVGProps,
 } from 'react';
-import { styled } from '@storybook/theming';
-import { color, typography } from '../common';
+
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { styled } from '@storybook/theming';
+
+import { color, typography } from '../common';
 
 export interface InputProps {
   id: string;
   type?: string;
   value?: string;
   label: string;
-  ariaLabel: string;
   className?: string;
   helperText?: string;
   labelIcon?: ReactNode;
@@ -150,7 +151,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
       error = false,
       helperText,
       hideLabel = false,
-      ariaLabel,
       icon,
       label,
       labelIcon,
@@ -161,8 +161,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
     }: InputProps,
     ref,
   ) => {
-    const errorId = `${id}-error`;
-
     // Outside refs take precedence
     const selfRef = useRef();
     const inputRef = (ref as MutableRefObject<HTMLInputElement>) || selfRef;
@@ -217,6 +215,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
             ref={ref}
             value={value}
             type={type === 'password' ? pwd : type}
+            aria-describedby={id}
             aria-invalid={!!error}
             {...props}
           />

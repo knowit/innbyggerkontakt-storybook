@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Select, { Props, StylesConfig } from 'react-select';
+
 import { color, typography } from '../../common';
 import './Dropdown.scss';
 

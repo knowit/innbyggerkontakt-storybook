@@ -1,15 +1,11 @@
-import * as React from "react";
-import { SVGProps } from "react";
+import * as React from 'react';
+import { SVGProps } from 'react';
 interface SVGRProps {
   title?: string;
   titleId?: string;
 }
 
-const Info = ({
-  title,
-  titleId,
-  ...props
-}: SVGProps<SVGSVGElement> & SVGRProps) => (
+const Info = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
   <svg
     viewBox="0 0 20 20"
     fill="none"

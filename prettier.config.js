@@ -1,12 +1,17 @@
-const base = require("@storybook/linter-config/prettier.config");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// linjen over må slettes når svger gjøres om til om komponenter med svgr
 
 module.exports = {
-  ...base,
-  arrowParens: "always",
+  arrowParens: 'always',
+  semi: true,
+  trailingComma: 'all',
+  singleQuote: true,
+  printWidth: 120,
+  tabWidth: 2,
   overrides: [
     {
-      files: "*.html",
-      options: { parser: "babel" },
+      files: '*.html',
+      options: { parser: 'babel' },
     },
   ],
 };
