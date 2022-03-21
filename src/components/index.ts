@@ -7,7 +7,6 @@ import { Dropdown } from './Dropdown/Dropdown';
 import { Input } from './Input';
 import { Loading } from './Loading/Loading';
 import { Pagination } from './Pagination';
-import { TimePicker } from './TimePicker/TimePicker';
 import { Popup } from './Popup';
 import { RadioButton } from './RadioButton';
 
@@ -21,7 +20,6 @@ export {
   Input,
   Loading,
   Pagination,
-  TimePicker,
   Popup,
   RadioButton,
 };
