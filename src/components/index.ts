@@ -7,8 +7,22 @@ import { Dropdown } from './Dropdown/Dropdown';
 import { Input } from './Input';
 import { Loading } from './Loading/Loading';
 import { Pagination } from './Pagination';
+import { TimePicker } from './TimePicker/TimePicker';
 import { Popup } from './Popup';
 import { RadioButton } from './RadioButton';
 
-export { Button, Card, Checkbox, ConsentModal, ErrorMessage, Dropdown, Input, Loading, Pagination, Popup, RadioButton };
+export {
+  Button,
+  Card,
+  Checkbox,
+  ConsentModal,
+  ErrorMessage,
+  Dropdown,
+  Input,
+  Loading,
+  Pagination,
+  TimePicker,
+  Popup,
+  RadioButton,
+};
 export type { ErrorMessageProps };
