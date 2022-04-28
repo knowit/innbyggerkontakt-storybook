@@ -1,6 +1,7 @@
 import { Button } from './Button';
 import { Card } from './Card';
 import { Checkbox } from './Checkbox';
+import { ColorSwatch } from './ColorSwatch';
 import { ConsentModal } from './ConsentModal';
 import { ErrorMessage, ErrorMessageProps } from './ErrorMessage';
 import { Dropdown } from './Dropdown/Dropdown';
@@ -10,5 +11,18 @@ import { Pagination } from './Pagination';
 import { Popup } from './Popup';
 import { RadioButton } from './RadioButton';
 
-export { Button, Card, Checkbox, ConsentModal, ErrorMessage, Dropdown, Input, Loading, Pagination, Popup, RadioButton };
+export {
+  Button,
+  Card,
+  Checkbox,
+  ColorSwatch,
+  ConsentModal,
+  ErrorMessage,
+  Dropdown,
+  Input,
+  Loading,
+  Pagination,
+  Popup,
+  RadioButton,
+};
 export type { ErrorMessageProps };

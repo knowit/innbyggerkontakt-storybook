@@ -18,5 +18,5 @@ module.exports = {
     role: 'img',
   },
   titleProp: true,
-  typescript: false,
+  typescript: true,
 };
