@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ColorSwatch } from '../components/';
-import { ColorSwatchProps } from '../components/ColorSwatch';
+import { ButtonProps } from '../components/ColorSwatch';
 
 export default {
   title: 'Components/ColorSwatch',
@@ -11,30 +11,27 @@ export default {
       defaultValue: '#1dd19d',
       control: { type: 'color' },
     },
-    checked: {
-      control: false,
-    },
   },
 };
 
-export const Default = (args: ColorSwatchProps) => <ColorSwatch {...args} />;
+export const Default = (args: ButtonProps) => <ColorSwatch {...args} />;
 
-export const WhiteTextShow = () => (
+export const WhiteTextShow = ({ checked }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-    <ColorSwatch colorHex={'#B03A2E'} checked={false} />
-    <ColorSwatch colorHex={'#76448A'} checked={false} />
-    <ColorSwatch colorHex={'#1F618D'} checked={false} />
-    <ColorSwatch colorHex={'#1E8449'} checked={false} />
-    <ColorSwatch colorHex={'#B7950B'} checked={false} />
+    <ColorSwatch colorHex={'#B03A2E'} checked={checked} />
+    <ColorSwatch colorHex={'#76448A'} checked={checked} />
+    <ColorSwatch colorHex={'#1F618D'} checked={checked} />
+    <ColorSwatch colorHex={'#1E8449'} checked={checked} />
+    <ColorSwatch colorHex={'#B7950B'} checked={checked} />
   </div>
 );
 
-export const BlackTextShow = () => (
+export const BlackTextShow = ({ checked }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-    <ColorSwatch colorHex={'#E6B0AA'} checked={false} />
-    <ColorSwatch colorHex={'#D7BDE2'} checked={false} />
-    <ColorSwatch colorHex={'#A9CCE3'} checked={false} />
-    <ColorSwatch colorHex={'#A9DFBF'} checked={false} />
-    <ColorSwatch colorHex={'#F9E79F'} checked={false} />
+    <ColorSwatch colorHex={'#E6B0AA'} checked={checked} />
+    <ColorSwatch colorHex={'#D7BDE2'} checked={checked} />
+    <ColorSwatch colorHex={'#A9CCE3'} checked={checked} />
+    <ColorSwatch colorHex={'#A9DFBF'} checked={checked} />
+    <ColorSwatch colorHex={'#F9E79F'} checked={checked} />
   </div>
 );

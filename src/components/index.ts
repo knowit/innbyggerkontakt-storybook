@@ -1,6 +1,7 @@
 import { Button } from './Button';
 import { Card } from './Card';
 import { Checkbox } from './Checkbox';
+import { ColorPicker } from './ColorPicker';
 import { ColorSwatch } from './ColorSwatch';
 import { ConsentModal } from './ConsentModal';
 import { ErrorMessage, ErrorMessageProps } from './ErrorMessage';
@@ -15,6 +16,7 @@ export {
   Button,
   Card,
   Checkbox,
+  ColorPicker,
   ColorSwatch,
   ConsentModal,
   ErrorMessage,
