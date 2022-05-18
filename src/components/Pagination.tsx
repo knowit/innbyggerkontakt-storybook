@@ -83,7 +83,7 @@ export const Pagination = ({
         disabled={disabledLeft}
         id="forrgieSide"
       >
-        <Previous aria-labelledby="forrigeSideButton" />
+        <Previous aria-label="forrigeSideButton" />
       </Button>
 
       <StyledP>
@@ -99,7 +99,7 @@ export const Pagination = ({
         disabled={disabledRight}
         id="nesteSide"
       >
-        <Next aria-labelledby="nesteSideButton" />
+        <Next aria-label="nesteSideButton" />
       </Button>
     </StyledPagination>
   );

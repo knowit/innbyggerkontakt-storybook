@@ -131,7 +131,7 @@ export const ColorSwatch: React.FC<ButtonProps> = ({ colorHex = '#1dd19d', check
         onClick={onClick}
         {...props}
       >
-        {checked && checkIfHex(colorHex) && <CheckSvg className="checkSvg" />}
+        {checked && checkIfHex(colorHex) && <CheckSvg aria-label="checked" className="checkSvg" />}
       </StyledButton>
       {checkIfHex(colorHex) && (
         <StyledText colorHex={colorHex}>{checkIfHex(colorHex) ? colorHex : 'error with hex, check console'}</StyledText>

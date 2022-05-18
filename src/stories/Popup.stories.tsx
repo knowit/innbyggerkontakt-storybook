@@ -17,7 +17,7 @@ PopupWithText.args = {
 };
 
 const PopupWithComponent = (args: PopupProps) => (
-  <Popup {...args} childComponent={<Input id="emailInput" ariaLabel={'Arial label'} label={'Epost'} />} />
+  <Popup {...args} childComponent={<Input id="emailInput" aria-label={'Arial label'} label={'Epost'} />} />
 );
 
 export const PopupWithInput = PopupWithComponent.bind({});
@@ -30,9 +30,9 @@ const PopupWithMoreComponents = (args: PopupProps) => (
     {...args}
     childComponent={
       <div>
-        <Input id="emailInput" ariaLabel={'Arial label'} label={'Epost'} />
-        <Input id="emailInput" ariaLabel={'Arial label'} label={'Epost'} />
-        <Input id="emailInput" ariaLabel={'Arial label'} label={'Epost'} />
+        <Input id="emailInput1" aria-label={'Arial label'} label={'Epost'} />
+        <Input id="emailInput2" aria-label={'Arial label'} label={'Epost'} />
+        <Input id="emailInput3" aria-label={'Arial label'} label={'Epost'} />
       </div>
     }
   />

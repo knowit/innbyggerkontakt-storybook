@@ -114,10 +114,10 @@ const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
     ${(props) =>
       props.appearence === 'green'
         ? `
-            color: ${color.evenDarkerGreen};
+            color: ${color.darkestGreen};
           `
         : `
-            color: ${color.lightBrightBlue};
+            color: ${color.darkBrightBlue};
           `}
     height: 1em;
     width: 1em;
@@ -129,10 +129,10 @@ const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
     ${(props) =>
       props.appearence === 'green'
         ? `
-            border: 1px solid ${color.evenDarkerGreen};
+            border: 2px solid ${color.darkestGreen};
           `
         : `
-            border: 1px solid ${color.brightBlue};
+            border: 2px solid ${color.darkBrightBlue};
           `}
     ${(props) =>
       props.error === true &&
@@ -187,39 +187,41 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
     return (
       <InputContainer className={className}>
         <LabelWrapper hideLabel={hideLabel}>
-          <Label htmlFor={id} appearence={appearence}>
+          <Label htmlFor={id} aria-labelledby={id} appearence={appearence}>
             {labelIcon}
             {label}
+
+            <HelperText error={error}>{helperText}</HelperText>
+
+            <InputWrapper appearence={appearence} error={error}>
+              {type === 'password' ? (
+                pwd === 'password' ? (
+                  <span onClick={togglePassword}>
+                    <VisibilityOff />
+                  </span>
+                ) : (
+                  <span onClick={togglePassword}>
+                    <Visibility />
+                  </span>
+                )
+              ) : (
+                icon
+              )}
+              <InputEl
+                id={id}
+                aria-label={id}
+                title={id}
+                // Pass the ref to the actual input element so it can be controlled
+                // externally.
+                ref={ref}
+                value={value}
+                type={type === 'password' ? pwd : type}
+                aria-invalid={!!error}
+                {...props}
+              />
+            </InputWrapper>
           </Label>
         </LabelWrapper>
-        <HelperText error={error}>{helperText}</HelperText>
-
-        <InputWrapper appearence={appearence} error={error}>
-          {type === 'password' ? (
-            pwd === 'password' ? (
-              <span onClick={togglePassword}>
-                <VisibilityOff />
-              </span>
-            ) : (
-              <span onClick={togglePassword}>
-                <Visibility />
-              </span>
-            )
-          ) : (
-            icon
-          )}
-          <InputEl
-            id={id}
-            // Pass the ref to the actual input element so it can be controlled
-            // externally.
-            ref={ref}
-            value={value}
-            type={type === 'password' ? pwd : type}
-            aria-describedby={id}
-            aria-invalid={!!error}
-            {...props}
-          />
-        </InputWrapper>
       </InputContainer>
     );
   },

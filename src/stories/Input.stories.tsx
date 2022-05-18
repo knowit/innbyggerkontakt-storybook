@@ -47,99 +47,50 @@ export default {
   },
 };
 
-export const Default = () => (
-  <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} ariaLabel={'Aria label'} />
-);
+export const Default = () => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} />;
 
 export const Lab = (args: InputProps) => <Input {...args} />;
 Lab.args = {};
 
 export const Appearence = ({ icon }: InputProps) => (
   <>
-    <Input
-      id="greenInputWithoutIcon"
-      placeholder="Appearence is green"
-      label={'Label'}
-      startFocused={false}
-      ariaLabel={'Aria label'}
-    />
-    <Input
-      id="greenInputWitIcon"
-      placeholder="Appearence is green with icon"
-      icon={icon}
-      label={'Label'}
-      ariaLabel={'Aria label'}
-    />
-    <Input
-      id="blueInputWithoutIcon"
-      appearence="blue"
-      placeholder="Appearence is blue"
-      label={'Label'}
-      ariaLabel={'Aria label'}
-    />
+    <Input id="greenInputWithoutIcon" placeholder="Appearence is green" label={'Label'} startFocused={false} />
+    <Input id="greenInputWitIcon" placeholder="Appearence is green with icon" icon={icon} label={'Label'} />
+    <Input id="blueInputWithoutIcon" appearence="blue" placeholder="Appearence is blue" label={'Label'} />
     <Input
       id="blueInputWithIcon"
       appearence="blue"
       placeholder="Appearence is blue with icon"
       icon={icon}
       label={'Label'}
-      ariaLabel={'Aria label'}
     />
   </>
 );
 
 export const Label = ({ labelIcon }: InputProps) => (
   <>
-    <Input label="label" type={'text'} id={'ID'} error={false} hideLabel={false} ariaLabel={'Aria label'} />
-    <Input id="exampleId" label="Label with icon" labelIcon={labelIcon} error={false} ariaLabel={'Aria label'} />
+    <Input label="label" type={'text'} id={'ID'} error={false} hideLabel={false} />
+    <Input id="exampleId" label="Label with icon" labelIcon={labelIcon} error={false} />
   </>
 );
 
 export const HelperText = () => (
   <>
-    <Input
-      id="HelperText"
-      label="Helpertext"
-      helperText="This is helper message  without error"
-      ariaLabel={'Aria label'}
-    />
-    <Input
-      id="HelperTextForError"
-      label="Helpertext"
-      error
-      helperText="This is helper message with error"
-      ariaLabel={'Aria label'}
-    />
+    <Input id="HelperText" label="Helpertext" helperText="This is helper message  without error" />
+    <Input id="HelperTextForError" label="Helpertext" error helperText="This is helper message with error" />
   </>
 );
 
 export const Icons = ({ labelIcon, icon }: InputProps) => (
   <>
-    <Input
-      label="Icon in label"
-      labelIcon={labelIcon}
-      type={'text'}
-      id={'ID'}
-      hideLabel={false}
-      ariaLabel={'Aria label'}
-    />
-    <Input label="Icon in input" icon={icon} type={'text'} id={'ID'} hideLabel={false} ariaLabel={'Aria label'} />
-    <Input id="exampleId" label="Icon in label and input" labelIcon={labelIcon} icon={icon} ariaLabel={'Aria label'} />
+    <Input label="Icon in label" labelIcon={labelIcon} type={'text'} id={'ID'} hideLabel={false} />
+    <Input label="Icon in input" icon={icon} type={'text'} id={'ID'} hideLabel={false} />
+    <Input id="exampleId" label="Icon in label and input" labelIcon={labelIcon} icon={icon} />
   </>
 );
 
 export const Password = () => (
   <>
-    <span>
-      When input type is password icon prop is overwritten by default password icon that also provides functionality for
-      showing and hiding password text
-    </span>
-    <Input
-      id="exampleId"
-      label="label"
-      type="password"
-      placeholder="skriv inn passord"
-      ariaLabel={'Aria label'}
-    ></Input>
+    <Input id="exampleId" label="label" type="password" placeholder="skriv inn passord" />
   </>
 );
