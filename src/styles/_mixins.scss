@@ -1,0 +1,11 @@
+@import './defaultFonts';
+
+@mixin resetButton() {
+    background: none;
+    border: none;
+    border-radius: 1rem;
+    color: inherit;
+    cursor: pointer;
+    font: $font-family;
+    padding: 0;
+  }
