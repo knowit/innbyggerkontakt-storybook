@@ -14,20 +14,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: $font-family;
     gap: 1rem;
 
      &.toggled {
-        font-weight: $semibold;
+        font-weight: $medium;
     }
 
     &.disabled {
         border: 1px solid $gray-inactive;
         color: $gray-text;
+        cursor: default;
     }
 
     .check {
-        height: 1rem;
-        width: auto;
+        width: 1rem;
+        height: auto;
         fill: $dark-bright-blue;
     }
 }
