@@ -21,7 +21,7 @@ const StyledDiv = styled.div`
  * @param options list of filter options
  * @param toggled state containing toggled items - must match labels in options
  * @param setToggled setter for toggled state
- * @param exclusivity is a map<K,V> where K is an option and V is a list of all options that should be disabled when K is toggled
+ * @param exclusivity is a list of string[] where the the sublists contain mutually exclusive options
  */
 export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setToggled, exclusivity }) => {
   function isDisabled(option: string) {
