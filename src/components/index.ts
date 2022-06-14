@@ -11,6 +11,8 @@ import { Loading } from './Loading/Loading';
 import { Pagination } from './Pagination';
 import { Popup } from './Popup';
 import { RadioButton } from './RadioButton';
+import { FilterToggle } from './FilterToggle/FilterToggle';
+import { FilterGroup } from './FilterGroup/FilterGroup';
 
 export {
   Button,
@@ -26,5 +28,7 @@ export {
   Pagination,
   Popup,
   RadioButton,
+  FilterToggle,
+  FilterGroup,
 };
 export type { ErrorMessageProps };

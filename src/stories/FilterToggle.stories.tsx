@@ -1,4 +1,4 @@
-import { FilterToggle } from '../components/FilterToggle/FilterToggle';
+import { FilterToggle } from '../components';
 
 export default {
   title: 'Components/FilterToggle',
