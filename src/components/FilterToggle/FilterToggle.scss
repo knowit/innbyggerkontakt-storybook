@@ -1,0 +1,35 @@
+@import "../../styles/mixins";
+@import "../../styles/defaultFonts";
+@import "../../styles/variables";
+@import "../../styles/defaultColors";
+
+.filterToggle {
+    @include resetButton();
+    font-size: $px14;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius-tag;
+    border: 1px solid $dark-bright-blue;
+    color: $dark-bright-blue;
+    font-weight: $regular;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-family;
+    gap: 1rem;
+
+     &.toggled {
+        font-weight: $medium;
+    }
+
+    &.disabled {
+        border: 1px solid $gray-inactive;
+        color: $gray-text;
+        cursor: default;
+    }
+
+    .check {
+        width: 1rem;
+        height: auto;
+        fill: $dark-bright-blue;
+    }
+}
