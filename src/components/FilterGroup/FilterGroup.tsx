@@ -18,8 +18,10 @@ const StyledDiv = styled.div`
 
 /**
  * Renders FilterToggles based on given options and exclusivity.
- * @param exclusivity is a map where key is an option x and the value is all options that should be
- * mutually exclusive with x.
+ * @param options list of filter options
+ * @param toggled state containing toggled items - must match labels in options
+ * @param setToggled setter for toggled state
+ * @param exclusivity is a map<K,V> where K is an option and V is a list of all options that should be disabled when K is toggled
  */
 export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setToggled, exclusivity }) => {
   function isDisabled(option: string) {
@@ -39,6 +41,7 @@ export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setT
     }
   }
 
+  /* renders filters either toggled, untoggled or disabled */
   function renderFilters() {
     return options.map((option) => {
       if (toggled.includes(option)) {
