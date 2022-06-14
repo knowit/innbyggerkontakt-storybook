@@ -6,7 +6,7 @@ interface FilterGroupProps {
   options: string[];
   toggled: string[];
   setToggled: React.Dispatch<React.SetStateAction<string[]>>;
-  exclusivity?: Map<string, string[]>;
+  exclusivity?: string[][];
 }
 
 const StyledDiv = styled.div`
@@ -25,10 +25,12 @@ const StyledDiv = styled.div`
  */
 export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setToggled, exclusivity }) => {
   function isDisabled(option: string) {
-    for (const item of toggled) {
-      if (exclusivity?.get(item)?.includes(option)) {
-        return true;
-      }
+    if (exclusivity) {
+      return exclusivity
+        .filter((sublist) => sublist.includes(option))
+        .flat()
+        .filter((item) => item !== option)
+        .some((item) => toggled.includes(item));
     }
     return false;
   }
