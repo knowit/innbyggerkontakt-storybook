@@ -9,20 +9,8 @@ interface FilterToggleProps {
 }
 
 export const FilterToggle: React.FC<FilterToggleProps> = ({ label, toggled = false, disabled, onClick }) => {
-  function getStyles() {
-    const classNames = ['filterToggle'];
-
-    if (toggled) {
-      classNames.push('toggled');
-    } else if (disabled) {
-      classNames.push('disabled');
-    }
-
-    return classNames.join(' ');
-  }
-
   return (
-    <button className={getStyles()} onClick={onClick}>
+    <button className={`filterToggle ${toggled && 'toggled'} ${disabled && 'disabled'}`} onClick={onClick}>
       {toggled && <Check className="check" />}
       {label}
     </button>
