@@ -45,13 +45,13 @@ export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setT
 
   /* renders filters either toggled, untoggled or disabled */
   function renderFilters() {
-    return options.map((option) => {
+    return options.map((option, index) => {
       if (toggled.includes(option)) {
-        return <FilterToggle label={option} onClick={() => handleToggle(option)} toggled />;
+        return <FilterToggle label={option} onClick={() => handleToggle(option)} toggled key={index} />;
       } else if (isDisabled(option)) {
-        return <FilterToggle label={option} onClick={() => void 0} disabled={true} />;
+        return <FilterToggle label={option} onClick={() => void 0} disabled={true} key={index} />;
       }
-      return <FilterToggle label={option} onClick={() => handleToggle(option)} />;
+      return <FilterToggle label={option} onClick={() => handleToggle(option)} key={index} />;
     });
   }
 

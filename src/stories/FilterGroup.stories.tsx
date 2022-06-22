@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { FilterGroup } from '../components/FilterGroup/FilterGroup';
+import { FilterGroup } from '../components';
 
 export default {
   title: 'Components/FilterGroup',
