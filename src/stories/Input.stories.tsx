@@ -45,6 +45,9 @@ export default {
       },
     },
   },
+  args: {
+    helperText: '',
+  },
 };
 
 export const Default = () => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} />;
