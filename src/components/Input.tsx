@@ -179,15 +179,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
         </LabelWrapper>
         <InputWrapper appearence={appearence} error={error}>
           {type === 'password' ? (
-            hidePwd ? (
-              <span onClick={togglePassword}>
-                <Visibility />
-              </span>
-            ) : (
-              <span onClick={togglePassword}>
-                <VisibilityOff />
-              </span>
-            )
+            <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>
           ) : (
             icon
           )}
