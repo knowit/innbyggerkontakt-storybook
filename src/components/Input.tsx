@@ -82,11 +82,7 @@ const LabelWrapper = styled.div<Pick<InputProps, 'hideLabel'>>`
   gap: 0.25rem;
   margin-bottom: 0.25rem;
 
-  ${(props) =>
-    props.hideLabel &&
-    `
-      display: none;
-    `}
+  ${(props) => props.hideLabel && 'display: none; '}
 `;
 
 const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
