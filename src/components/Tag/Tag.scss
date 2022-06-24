@@ -1,0 +1,21 @@
+@use '../../styles/defaultColors' as colors;
+@use '../../styles/defaultFonts' as fonts;
+
+.tagContainer {
+    background-color: colors.$light-blue-transparent;
+    font-family: fonts.$font-family;
+    font-size: fonts.$px11;
+    font-weight: fonts.$regular;
+    color: colors.$dark-bright-blue;
+    padding: 3px 10px;
+    border-radius: 21px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > svg {
+        width: 18px;
+        fill: colors.$dark-bright-blue;
+    }
+}
