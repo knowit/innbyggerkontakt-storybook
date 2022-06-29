@@ -84,16 +84,6 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
       border-radius: 3px;
       width: fit-content;
       height: fit-content;
-      padding: 10px 20px;
-      &:hover {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-        }
-      }
-      &:active {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-         }
       }`}
 
   ${(props) =>
@@ -101,24 +91,15 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     `
       border-radius: 90px;
       border-style: solid;
-      &:hover {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-        }
-      }
-      &:active {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-         }
       }
   `}
 
   ${(props) =>
     props.size === 'big' &&
     `
-      padding: 16px 24px;
+      padding: 0.75rem 1.5rem;
       &:hover {
-        padding: 16px 23px;
+        padding: 0.75rem 1.5rem;
       }
    
   `}
@@ -126,7 +107,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
   ${(props) =>
     props.size === 'small' &&
     `
-      padding: 10px 25px;
+      padding: 0.625rem 1.5rem;
   `}
 
 ${(props) =>
@@ -154,16 +135,16 @@ ${(props) =>
       color: ${color.white};
       border-color: ${color.darkerGreen};
 
-       &:focus {
+      &:active, &:hover {
+        background-color: ${color.evenDarkerGreen};
+        color: ${color.white};
+        border-color: ${color.evenDarkerGreen};
+      }
+      &:focus {
         background-color: ${color.brightGreen};
         color: ${color.white};
         border-color: ${color.black};
         outline: none;
-      }
-      &:active {
-        background-color: ${color.darkerGreen};
-        color: ${color.white};
-        border-color: ${color.darkerGreen};
       }
      `}
 
@@ -196,19 +177,26 @@ ${(props) =>
     
     &:hover{
         border-width: 3px;
+        position: relative;
+        left: ${props.size === 'big' ? '-1px' : '2px'};
+        top: ${props.size === 'big' ? '-1px' : '0px'};
     }
+
+    &:focus, &:active {
+      position: relative;
+      left: ${props.size === 'big' ? '-2px' : '1px'};
+      top: ${props.size === 'big' ? '-2px' : '0px'};
+      border-color: ${color.darkBrightBlue};
+      border-width: 4px;
+      background-color: transparent;
+    }
+
     &:focus{
-        background-color: transparent;
         color: ${color.brightBlue};
-        border-color: ${color.darkBrightBlue};
-        border-width: 4px;
         outline: none;
     }
     &:active{
-        background-color: transparent;
         color: ${color.darkBrightBlue};
-        border-color: ${color.darkBrightBlue};
-        border-width: 4px;
     }
   `}
   ${(props) =>
@@ -270,7 +258,7 @@ export const Button = ({
   variant = 'square',
   boxShadow = false,
   fontSize = 'px14',
-  fontWeight = 'regular',
+  fontWeight = 'bold',
   size = 'small',
   type = 'button',
   disabled = false,
