@@ -155,16 +155,20 @@ ${(props) =>
       color: ${color.white};
       border-color: ${color.brightBlue};
 
+      &:hover {
+        background-color: ${color.darkBrightBlue};
+      }
+
       &:focus {
-        background-color: ${color.brightBlue};
+        background-color: ${color.lightBrightBlue};
         color: ${color.white};
         border-color: ${color.black};
         outline: none;
   }
       &:active {
-        background-color: ${color.darkBrightBlue};
+        background-color: ${color.lightBrightBlue};
         color: ${color.white};
-        border-color: ${color.darkBrightBlue};
+        border-color: ${color.lightBrightBlue};
       }
   `}
 
