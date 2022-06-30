@@ -175,17 +175,17 @@ ${(props) =>
     color: ${color.brightBlue};
     border-color: ${color.brightBlue};
     
-    &:hover{
+    &:hover {
         border-width: 3px;
         position: relative;
-        left: ${props.size === 'big' ? '-1px' : '2px'};
-        top: ${props.size === 'big' ? '-1px' : '0px'};
+        left: -1px;
+        top: -1px;
     }
 
     &:focus, &:active {
       position: relative;
-      left: ${props.size === 'big' ? '-2px' : '1px'};
-      top: ${props.size === 'big' ? '-2px' : '0px'};
+      left: -2px;
+      top: -2px;
       border-color: ${color.darkBrightBlue};
       border-width: 4px;
       background-color: transparent;
@@ -199,21 +199,6 @@ ${(props) =>
         color: ${color.darkBrightBlue};
     }
   `}
-  ${(props) =>
-    props.color === 'tertiary' &&
-    props.size === 'small' &&
-    `
-    padding: 10px 25px;
-    &:hover {
-      padding: 9px 22px;
-    }
-    &:focus{
-      padding: 8px 22px;
-    }
-    &:active{
-      padding: 8px 20px;
-    }
-    `}
 
   ${(props) =>
     props.color === 'mint' &&
