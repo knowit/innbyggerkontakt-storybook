@@ -1,5 +1,7 @@
-import { Computer, Smartphone } from '@mui/icons-material';
 import React from 'react';
+
+import { Computer, Smartphone } from '@mui/icons-material';
+
 import './DeviceShare.scss';
 
 export type Props = {
@@ -18,21 +20,19 @@ const DeviceShare: React.FC<Props> = (props) => {
         className="deviceShareElement --mobile"
         style={{
           width: `${mobileShare}%`,
-          ...(props.showValue === false ? { fontSize: 0 } : {}),
         }}
       >
         <Smartphone />
-        {`${mobileShare} %`}
+        {props.showValue ? `${mobileShare} %` : null}
       </div>
       <div
         className="deviceShareElement --desktop"
         style={{
           width: `${100 - mobileShare}%`,
-          ...(props.showValue === false ? { fontSize: 0 } : {}),
         }}
       >
         <Computer />
-        {`${100 - mobileShare} %`}
+        {props.showValue ? `${100 - mobileShare} %` : null}
       </div>
     </div>
   );
