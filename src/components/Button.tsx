@@ -181,15 +181,11 @@ ${(props) =>
     
     &:hover {
         border-width: 3px;
-        position: relative;
-        left: -1px;
-        top: -1px;
+        margin: -1px;
     }
 
     &:focus, &:active {
-      position: relative;
-      left: -2px;
-      top: -2px;
+      margin: -2px;
       border-color: ${color.darkBrightBlue};
       border-width: 4px;
       background-color: transparent;
