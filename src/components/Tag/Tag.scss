@@ -1,0 +1,22 @@
+@use '../../styles/defaultColors' as colors;
+@use '../../styles/defaultFonts' as fonts;
+@use '../../styles/variables' as variables;
+
+.tagContainer {
+    background-color: colors.$light-blue-transparent;
+    font-family: fonts.$font-family;
+    font-size: fonts.$px11;
+    font-weight: fonts.$regular;
+    color: colors.$dark-bright-blue;
+    padding: 3px 10px;
+    border-radius: variables.$border-radius-tag;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > svg {
+        width: 18px;
+        fill: colors.$dark-bright-blue;
+    }
+}
