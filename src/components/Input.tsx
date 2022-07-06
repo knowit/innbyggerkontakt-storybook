@@ -43,16 +43,23 @@ const InputEl = styled.input`
   padding: 15px 16px;
   font-size: ${typography.size.px18}px;
   line-height: 20px;
+
   &:focus {
     border-width: 2px;
     outline: none;
   }
 `;
 
-const Label = styled.label<Pick<InputProps, 'appearence'>>`
+const Label = styled.label<Pick<InputProps, 'hideLabel'>>`
   font-family: ${typography.type.primary};
   font-weight: ${typography.weight.regular};
   font-size: ${typography.size.px18}px;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  ${({ hideLabel }) => hideLabel && 'display: none;'}
 `;
 
 const HelperText = styled.span<Pick<InputProps, 'error'>>`
@@ -70,28 +77,12 @@ const HelperText = styled.span<Pick<InputProps, 'error'>>`
 `;
 
 const LabelWrapper = styled.div<Pick<InputProps, 'hideLabel'>>`
-  padding: 0 0 4px 0;
-  svg {
-    margin-right: 10px;
-  }
-  ${(props) =>
-    props.hideLabel &&
-    `
-      border: 0px !important;
-      clip: rect(0 0 0 0) !important;
-      -webkit-clip-path: inset(100%) !important;
-      clip-path: inset(100%) !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      padding: 0px !important;
-      position: absolute !important;
-      white-space: nowrap !important;
-      width: 1px !important;
-    `}
-`;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
 
-const InputContainer = styled.div`
-  padding-top: 1em;
+  ${(props) => props.hideLabel && 'display: none; '}
 `;
 
 const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
@@ -126,14 +117,7 @@ const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
     background: transparent;
   }
   > input {
-    ${(props) =>
-      props.appearence === 'green'
-        ? `
-            border: 2px solid ${color.darkestGreen};
-          `
-        : `
-            border: 2px solid ${color.darkBrightBlue};
-          `}
+    ${(props) => `border: 1px solid ${props.appearence === 'green' ? color.darkestGreen : color.darkBrightBlue};`}
     ${(props) =>
       props.error === true &&
       `
@@ -166,15 +150,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
     const inputRef = (ref as MutableRefObject<HTMLInputElement>) || selfRef;
     const didFocusOnStart = useRef(false);
 
-    const [pwd, setPwd] = useState(type);
+    const [hidePwd, setHidePwd] = useState(true);
 
     const togglePassword = useCallback(
       (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
         e.stopPropagation();
-        pwd === 'password' ? setPwd('text') : setPwd('password');
+        setHidePwd(!hidePwd);
       },
-      [pwd],
+      [hidePwd],
     );
 
     useEffect(() => {
@@ -185,44 +169,34 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
     }, [inputRef, didFocusOnStart]);
 
     return (
-      <InputContainer className={className}>
+      <div className={className}>
         <LabelWrapper hideLabel={hideLabel}>
-          <Label htmlFor={id} aria-labelledby={id} appearence={appearence}>
+          <Label htmlFor={id} aria-labelledby={id} hideLabel={hideLabel}>
             {labelIcon}
             {label}
-
-            <HelperText error={error}>{helperText}</HelperText>
-
-            <InputWrapper appearence={appearence} error={error}>
-              {type === 'password' ? (
-                pwd === 'password' ? (
-                  <span onClick={togglePassword}>
-                    <VisibilityOff />
-                  </span>
-                ) : (
-                  <span onClick={togglePassword}>
-                    <Visibility />
-                  </span>
-                )
-              ) : (
-                icon
-              )}
-              <InputEl
-                id={id}
-                aria-label={id}
-                title={id}
-                // Pass the ref to the actual input element so it can be controlled
-                // externally.
-                ref={ref}
-                value={value}
-                type={type === 'password' ? pwd : type}
-                aria-invalid={!!error}
-                {...props}
-              />
-            </InputWrapper>
           </Label>
+          <HelperText error={error}>{helperText}</HelperText>
         </LabelWrapper>
-      </InputContainer>
+        <InputWrapper appearence={appearence} error={error}>
+          {type === 'password' ? (
+            <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>
+          ) : (
+            icon
+          )}
+          <InputEl
+            id={id}
+            aria-label={id}
+            title={id}
+            // Pass the ref to the actual input element so it can be controlled
+            // externally.
+            ref={ref}
+            value={value}
+            type={type === 'password' && hidePwd ? 'password' : 'text'}
+            aria-invalid={!!error}
+            {...props}
+          />
+        </InputWrapper>
+      </div>
     );
   },
 );

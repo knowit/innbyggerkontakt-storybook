@@ -44,10 +44,24 @@ export default {
         },
       },
     },
+    type: {
+      defaultValue: 'text',
+      options: ['text', 'password'],
+      control: { type: 'radio' },
+    },
+    hideLabel: {
+      control: 'boolean',
+    },
+    helperText: {
+      control: 'text',
+    },
+    error: {
+      control: 'boolean',
+    },
   },
 };
 
-export const Default = () => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} />;
+export const Default = (args) => <Input type={'text'} id={'ID'} hideLabel={false} label={'Label'} {...args} />;
 
 export const Lab = (args: InputProps) => <Input {...args} />;
 Lab.args = {};
