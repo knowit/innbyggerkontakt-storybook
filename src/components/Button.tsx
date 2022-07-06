@@ -157,6 +157,7 @@ ${(props) =>
 
       &:hover {
         background-color: ${color.darkBrightBlue};
+        border-color: ${color.darkBrightBlue};
       }
 
       &:focus {
