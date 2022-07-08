@@ -20,7 +20,7 @@ const DeviceShare: React.FC<Props> = (props) => {
         className="deviceShareElement deviceShareElement--mobile"
         style={{
           width: `${mobileShare}%`,
-          minWidth: '2%',
+          minWidth: mobileShare < 10 ? '2%' : '120px',
         }}
       >
         {mobileShare > 9 ? (
@@ -41,7 +41,7 @@ const DeviceShare: React.FC<Props> = (props) => {
         className="deviceShareElement deviceShareElement--desktop"
         style={{
           width: `${100 - mobileShare}%`,
-          minWidth: '2%',
+          minWidth: mobileShare >= 91 ? '2%' : '120px',
         }}
       >
         {mobileShare < 91 ? (
