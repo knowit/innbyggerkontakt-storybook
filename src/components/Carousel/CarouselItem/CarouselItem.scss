@@ -1,0 +1,74 @@
+@import '../../../styles/defaultColors';
+
+.carouselItem{
+    display: flex;
+    flex-direction: column;
+    padding: 12px; //endres
+    border-radius: 1px; //endres
+    align-items: flex-start;
+    margin-left: 1rem;
+
+    background: $light-light-blue;
+    color: white;
+
+    width: 200px; //endres
+    height: 213px; //endres
+
+    scroll-snap-align: center;
+    scroll-behavior: smooth;
+
+}
+
+.carousel{
+    flex-direction: row;
+    display: flex;
+    overflow-x: scroll;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+ 
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    width: 995px; //endres
+    height: 213px; //endres
+
+    background: grey;
+
+    &__inner {
+        display: flex;
+        transition: transform 0.3s;
+      }
+
+    .button{
+        border-radius: 50%;
+        background-color: white;
+        border-color: black;
+        border: none;
+        width: 2.15rem;
+        height: 2.15rem;
+        padding: 0%;
+        position: absolute;
+        top: calc(50% - 1.075rem);
+        svg{
+            display: inline-flex;
+            shape-rendering: inherit;
+            height: 0.75rem;
+            align-items: center;
+            width: auto;
+        }
+        &:hover{
+            background-color: $light-blue;
+        }       
+        &.buttonLeft{
+            left: 0;
+        }
+        &.buttonRight{
+            right: 0;
+        }
+
+    }
+}
+
+

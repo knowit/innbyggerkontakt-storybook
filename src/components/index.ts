@@ -13,6 +13,7 @@ import { Popup } from './Popup';
 import { RadioButton } from './RadioButton';
 import { FilterToggle } from './FilterToggle/FilterToggle';
 import { FilterGroup } from './FilterGroup/FilterGroup';
+import { Carousel } from './Carousel/Carousel';
 
 export {
   Button,
@@ -30,5 +31,6 @@ export {
   RadioButton,
   FilterToggle,
   FilterGroup,
+  Carousel,
 };
 export type { ErrorMessageProps };
