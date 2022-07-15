@@ -187,9 +187,9 @@ ${(props) =>
     }
 
     &:focus, &:active {
-      margin: -1px;
+      margin: 0px;
       border-color: ${color.darkBrightBlue};
-      border-width: 4px;
+      border-width: 3px;
       background-color: transparent;
     }
 
@@ -211,7 +211,7 @@ ${(props) =>
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
       &:hover {
-        box-shadow: none;
+        border-color: ${color.brightGreen};
       }
       &:focus {
         background-color: ${color.white};
