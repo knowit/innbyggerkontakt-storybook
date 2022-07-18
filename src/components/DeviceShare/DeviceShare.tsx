@@ -9,6 +9,11 @@ export type Props = {
   showValue?: boolean;
 };
 
+/**
+ * A component which shows the relationship between mobile and desktop users.
+ * @param mobileShare percentage of mobile users (desktop share = 100% - mobileShare)
+ * @param showValue whether or not to show percentage numbers
+ */
 export const DeviceShare: React.FC<Props> = (props) => {
   let mobileShare = props.mobileShare;
   if (mobileShare < 0) mobileShare = 0;
