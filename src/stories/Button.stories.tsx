@@ -27,7 +27,7 @@ Color.args = { color: 'primary' };
 Color.decorators = [
   () => {
     return (
-      <>
+      <div style={{ display: 'flex', gap: '1rem' }}>
         <Button {...(Color.args as ButtonProps)} color="primary">
           Button
         </Button>
@@ -40,7 +40,7 @@ Color.decorators = [
         <Button {...(Color.args as ButtonProps)} color="mint">
           Button
         </Button>
-      </>
+      </div>
     );
   },
 ];

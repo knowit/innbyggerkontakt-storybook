@@ -84,16 +84,6 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
       border-radius: 3px;
       width: fit-content;
       height: fit-content;
-      padding: 10px 20px;
-      &:hover {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-        }
-      }
-      &:active {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-         }
       }`}
 
   ${(props) =>
@@ -101,24 +91,15 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
     `
       border-radius: 90px;
       border-style: solid;
-      &:hover {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-        }
-      }
-      &:active {
-        > span{
-      font-weight: ${typography.weight.extrabold};
-         }
       }
   `}
 
   ${(props) =>
     props.size === 'big' &&
     `
-      padding: 16px 24px;
+      padding: 0.75rem 1.5rem;
       &:hover {
-        padding: 16px 23px;
+        padding: 0.75rem 1.5rem;
       }
    
   `}
@@ -126,7 +107,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
   ${(props) =>
     props.size === 'small' &&
     `
-      padding: 10px 25px;
+      padding: 0.625rem 1.5rem;
   `}
 
 ${(props) =>
@@ -154,16 +135,16 @@ ${(props) =>
       color: ${color.white};
       border-color: ${color.darkerGreen};
 
-       &:focus {
+      &:active, &:hover {
+        background-color: ${color.evenDarkerGreen};
+        color: ${color.white};
+        border-color: ${color.evenDarkerGreen};
+      }
+      &:focus {
         background-color: ${color.brightGreen};
         color: ${color.white};
         border-color: ${color.black};
         outline: none;
-      }
-      &:active {
-        background-color: ${color.darkerGreen};
-        color: ${color.white};
-        border-color: ${color.darkerGreen};
       }
      `}
 
@@ -174,16 +155,21 @@ ${(props) =>
       color: ${color.white};
       border-color: ${color.brightBlue};
 
+      &:hover {
+        background-color: ${color.darkBrightBlue};
+        border-color: ${color.darkBrightBlue};
+      }
+
       &:focus {
-        background-color: ${color.brightBlue};
+        background-color: ${color.lightBrightBlue};
         color: ${color.white};
         border-color: ${color.black};
         outline: none;
   }
       &:active {
-        background-color: ${color.darkBrightBlue};
+        background-color: ${color.lightBrightBlue};
         color: ${color.white};
-        border-color: ${color.darkBrightBlue};
+        border-color: ${color.lightBrightBlue};
       }
   `}
 
@@ -193,39 +179,28 @@ ${(props) =>
     background-color: transparent;
     color: ${color.brightBlue};
     border-color: ${color.brightBlue};
+    margin: 1px;
     
-    &:hover{
+    &:hover {
         border-width: 3px;
+        margin: 0px;
     }
+
+    &:focus, &:active {
+      margin: 0px;
+      border-color: ${color.darkBrightBlue};
+      border-width: 3px;
+      background-color: transparent;
+    }
+
     &:focus{
-        background-color: transparent;
         color: ${color.brightBlue};
-        border-color: ${color.darkBrightBlue};
-        border-width: 4px;
         outline: none;
     }
     &:active{
-        background-color: transparent;
         color: ${color.darkBrightBlue};
-        border-color: ${color.darkBrightBlue};
-        border-width: 4px;
     }
   `}
-  ${(props) =>
-    props.color === 'tertiary' &&
-    props.size === 'small' &&
-    `
-    padding: 10px 25px;
-    &:hover {
-      padding: 9px 22px;
-    }
-    &:focus{
-      padding: 8px 22px;
-    }
-    &:active{
-      padding: 8px 20px;
-    }
-    `}
 
   ${(props) =>
     props.color === 'mint' &&
@@ -236,7 +211,7 @@ ${(props) =>
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
       &:hover {
-        box-shadow: none;
+        border-color: ${color.brightGreen};
       }
       &:focus {
         background-color: ${color.white};
@@ -270,7 +245,7 @@ export const Button = ({
   variant = 'square',
   boxShadow = false,
   fontSize = 'px14',
-  fontWeight = 'regular',
+  fontWeight = 'bold',
   size = 'small',
   type = 'button',
   disabled = false,
