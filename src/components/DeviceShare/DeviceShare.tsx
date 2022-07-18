@@ -9,7 +9,7 @@ export type Props = {
   showValue?: boolean;
 };
 
-const DeviceShare: React.FC<Props> = (props) => {
+export const DeviceShare: React.FC<Props> = (props) => {
   let mobileShare = props.mobileShare;
   if (mobileShare < 0) mobileShare = 0;
   if (mobileShare > 100) mobileShare = 100;
@@ -73,5 +73,3 @@ const DeviceShareText: React.FC<
     </div>
   );
 };
-
-export default DeviceShare;

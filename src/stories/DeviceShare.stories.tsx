@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DeviceShare from '../components/DeviceShare/DeviceShare';
+import { DeviceShare } from '../components/DeviceShare/DeviceShare';
 
 export default {
   title: 'Components/DeviceShare',
