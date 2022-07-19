@@ -23,7 +23,8 @@
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "react-select": "^5.2.2",
-    "web-vitals": "^2.1.0"
+    "web-vitals": "^2.1.0",
+    "babel-loader": "8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -105,7 +106,6 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "babel-loader": "8.1.0",
     "np": "^7.6.1",
     "prettier": "2.5.1",
     "typescript": "^4.6.2"
