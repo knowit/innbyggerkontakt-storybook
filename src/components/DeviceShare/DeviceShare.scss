@@ -1,0 +1,37 @@
+
+@use '../../styles/defaultColors' as colors;
+@use '../../styles/defaultFonts' as fonts;
+
+.deviceShareContainer {
+    display: flex;
+}
+
+.deviceShareElement {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    font-family: fonts.$font-family;
+    font-size: fonts.$px24;
+    font-weight: fonts.$regular;
+    
+    &.deviceShareElement--mobile {
+        border-top-left-radius: 99px;
+        border-bottom-left-radius: 99px;
+        background-color: colors.$dark-bright-blue;
+        color: colors.$background;
+    }
+    &.deviceShareElement--desktop {
+        border-top-right-radius: 99px;
+        border-bottom-right-radius: 99px;
+        background-color: white;
+        color: colors.$dark-bright-blue;
+    }
+
+    >.deviceShareText {
+        display: inline-flex;
+        justify-content: center;
+        padding: 0.5rem;
+        align-items: center;
+        gap: 1rem;
+    }
+}
