@@ -178,23 +178,25 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
           <HelperText error={error}>{helperText}</HelperText>
         </LabelWrapper>
         <InputWrapper appearence={appearence} error={error}>
-          {type === 'password' ? (
-            <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>
-          ) : (
-            icon
-          )}
-          <InputEl
-            id={id}
-            aria-label={id}
-            title={id}
-            // Pass the ref to the actual input element so it can be controlled
-            // externally.
-            ref={ref}
-            value={value}
-            type={type === 'password' && hidePwd ? 'password' : 'text'}
-            aria-invalid={!!error}
-            {...props}
-          />
+          <>
+            {type === 'password' ? (
+              <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>
+            ) : (
+              icon
+            )}
+            <InputEl
+              id={id}
+              aria-label={id}
+              title={id}
+              // Pass the ref to the actual input element so it can be controlled
+              // externally.
+              ref={ref}
+              value={value}
+              type={type === 'password' && hidePwd ? 'password' : 'text'}
+              aria-invalid={!!error}
+              {...props}
+            />
+          </>
         </InputWrapper>
       </div>
     );

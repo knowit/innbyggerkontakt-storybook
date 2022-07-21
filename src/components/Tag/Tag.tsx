@@ -5,9 +5,10 @@ export type TagProps = {
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   text?: string;
+  children?: React.ReactNode;
 };
 
-const Tag: React.FC<TagProps> = (props) => (
+export const Tag: React.FC<TagProps> = (props) => (
   <div className="tagContainer" {...props}>
     {props.leftIcon}
     {props.text}
@@ -15,5 +16,3 @@ const Tag: React.FC<TagProps> = (props) => (
     {props.rightIcon}
   </div>
 );
-
-export default Tag;
