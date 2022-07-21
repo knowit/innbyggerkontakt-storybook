@@ -5,6 +5,7 @@ export type TagProps = {
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
   text?: string;
+  children?: React.ReactNode;
 };
 
 export const Tag: React.FC<TagProps> = (props) => (
