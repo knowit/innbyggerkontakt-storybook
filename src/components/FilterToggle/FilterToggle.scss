@@ -16,6 +16,7 @@
     align-items: center;
     font-family: $font-family;
     gap: 1rem;
+    position: relative;
 
      &.toggled {
         font-weight: $medium;
@@ -31,5 +32,17 @@
         width: 1rem;
         height: auto;
         fill: $dark-bright-blue;
+        transform: translateX(0px);
+
+        :not(&.hidden) {
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 1;
+        }
+    
+        &.hidden {
+            position: absolute;
+            opacity: 0;
+            transform: translateX(20px);
+        }
     }
 }
