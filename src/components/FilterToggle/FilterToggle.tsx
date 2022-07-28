@@ -5,12 +5,19 @@ interface FilterToggleProps {
   label: string;
   toggled?: boolean;
   disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset' | undefined;
   onClick: () => void;
 }
 
-export const FilterToggle: React.FC<FilterToggleProps> = ({ label, toggled = false, disabled, onClick }) => {
+export const FilterToggle: React.FC<FilterToggleProps> = ({
+  label,
+  toggled = false,
+  disabled,
+  onClick,
+  type = 'button',
+}) => {
   return (
-    <button className={`filterToggle ${toggled && 'toggled'} ${disabled && 'disabled'}`} onClick={onClick}>
+    <button className={`filterToggle ${toggled && 'toggled'} ${disabled && 'disabled'}`} onClick={onClick} type={type}>
       {<Check className={`check ${!toggled ? 'hidden' : ''}`} />}
       {label}
     </button>
