@@ -33,7 +33,7 @@
         height: auto;
         fill: $dark-bright-blue;
 
-        :not(&.hidden) {
+        &:not(&.hidden) {
             transition: transform 0.3s, opacity 0.3s;
             opacity: 1;
             transform: translateX(0px);
