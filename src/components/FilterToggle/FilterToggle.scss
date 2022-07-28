@@ -32,15 +32,15 @@
         width: 1rem;
         height: auto;
         fill: $dark-bright-blue;
-        transform: translateX(0px);
 
         :not(&.hidden) {
             transition: transform 0.3s, opacity 0.3s;
             opacity: 1;
+            transform: translateX(0px);
         }
     
         &.hidden {
-            position: absolute;
+            position: absolute; // remove from document flow
             opacity: 0;
             transform: translateX(20px);
         }
