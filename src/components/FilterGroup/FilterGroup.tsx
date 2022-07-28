@@ -7,6 +7,7 @@ interface FilterGroupProps {
   toggled: string[];
   setToggled: React.Dispatch<React.SetStateAction<string[]>>;
   exclusivity?: string[][];
+  type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
 const StyledDiv = styled.div`
@@ -23,7 +24,13 @@ const StyledDiv = styled.div`
  * @param setToggled setter for toggled state
  * @param exclusivity is a list of string[] where the the sublists contain mutually exclusive options
  */
-export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setToggled, exclusivity }) => {
+export const FilterGroup: React.FC<FilterGroupProps> = ({
+  type = 'button',
+  options,
+  toggled,
+  setToggled,
+  exclusivity,
+}) => {
   function isDisabled(option: string) {
     if (exclusivity) {
       return exclusivity
@@ -47,11 +54,11 @@ export const FilterGroup: React.FC<FilterGroupProps> = ({ options, toggled, setT
   function renderFilters() {
     return options.map((option, index) => {
       if (toggled.includes(option)) {
-        return <FilterToggle label={option} onClick={() => handleToggle(option)} toggled key={index} />;
+        return <FilterToggle type={type} label={option} onClick={() => handleToggle(option)} toggled key={index} />;
       } else if (isDisabled(option)) {
-        return <FilterToggle label={option} onClick={() => void 0} disabled={true} key={index} />;
+        return <FilterToggle type={type} label={option} onClick={() => void 0} disabled={true} key={index} />;
       }
-      return <FilterToggle label={option} onClick={() => handleToggle(option)} key={index} />;
+      return <FilterToggle type={type} label={option} onClick={() => handleToggle(option)} key={index} />;
     });
   }
 
