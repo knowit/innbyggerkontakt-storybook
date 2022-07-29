@@ -27,7 +27,7 @@ export interface InputProps {
   error?: boolean;
   hideLabel?: boolean;
   startFocused?: boolean;
-  appearence?: 'green' | 'blue';
+  color?: 'green' | 'blue';
 }
 
 const InputEl = styled.input`
@@ -85,7 +85,7 @@ const LabelWrapper = styled.div<Pick<InputProps, 'hideLabel'>>`
   ${(props) => props.hideLabel && 'display: none; '}
 `;
 
-const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
+const InputWrapper = styled.div<Pick<InputProps, 'color' | 'error'>>`
   display: inline-block;
   position: relative;
   vertical-align: top;
@@ -103,7 +103,7 @@ const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
     cursor: pointer;
     align-items: center;
     ${(props) =>
-      props.appearence === 'green'
+      props.color === 'green'
         ? `
             color: ${color.darkestGreen};
           `
@@ -117,7 +117,7 @@ const InputWrapper = styled.div<Pick<InputProps, 'appearence' | 'error'>>`
     background: transparent;
   }
   > input {
-    ${(props) => `border: 1px solid ${props.appearence === 'green' ? color.darkestGreen : color.darkBrightBlue};`}
+    ${(props) => `border: 1px solid ${props.color === 'green' ? color.darkestGreen : color.darkBrightBlue};`}
     ${(props) =>
       props.error === true &&
       `
@@ -130,7 +130,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
   (
     {
       id,
-      appearence = 'green',
+      color = 'green',
       className = undefined,
       error = false,
       helperText,
@@ -177,7 +177,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
           </Label>
           <HelperText error={error}>{helperText}</HelperText>
         </LabelWrapper>
-        <InputWrapper appearence={appearence} error={error}>
+        <InputWrapper color={color} error={error}>
           <>
             {type === 'password' ? (
               <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>

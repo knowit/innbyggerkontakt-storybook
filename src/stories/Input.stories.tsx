@@ -66,18 +66,12 @@ export const Default = (args) => <Input type={'text'} id={'ID'} hideLabel={false
 export const Lab = (args: InputProps) => <Input {...args} />;
 Lab.args = {};
 
-export const Appearence = ({ icon }: InputProps) => (
+export const Color = ({ icon }: InputProps) => (
   <>
-    <Input id="greenInputWithoutIcon" placeholder="Appearence is green" label={'Label'} startFocused={false} />
-    <Input id="greenInputWitIcon" placeholder="Appearence is green with icon" icon={icon} label={'Label'} />
-    <Input id="blueInputWithoutIcon" appearence="blue" placeholder="Appearence is blue" label={'Label'} />
-    <Input
-      id="blueInputWithIcon"
-      appearence="blue"
-      placeholder="Appearence is blue with icon"
-      icon={icon}
-      label={'Label'}
-    />
+    <Input id="greenInputWithoutIcon" placeholder="Color is green" label={'Label'} startFocused={false} />
+    <Input id="greenInputWitIcon" placeholder="Color is green with icon" icon={icon} label={'Label'} />
+    <Input id="blueInputWithoutIcon" color="blue" placeholder="Color is blue" label={'Label'} />
+    <Input id="blueInputWithIcon" color="blue" placeholder="Color is blue with icon" icon={icon} label={'Label'} />
   </>
 );
 
