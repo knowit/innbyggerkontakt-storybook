@@ -11,22 +11,8 @@ export const Default = (args) => <Card {...args} />;
 
 export const Sizes = () => (
   <div>
-    <Card
-      size="small"
-      title={'title'}
-      image={undefined}
-      lastChanged={''}
-      bulletinType={'event'}
-      bulletinStatus={'draft'}
-    />
-    <Card
-      size="large"
-      title={'title'}
-      image={undefined}
-      lastChanged={''}
-      bulletinType={'event'}
-      bulletinStatus={'draft'}
-    />
+    <Card size="small" title={'title'} image={undefined} lastChanged={new Date()} type={'event'} status={'draft'} />
+    <Card size="large" title={'title'} image={undefined} lastChanged={new Date()} type={'event'} status={'draft'} />
   </div>
 );
 
@@ -36,17 +22,40 @@ export const Pictures = () => (
       size="small"
       title={'title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={''}
-      bulletinType={'event'}
-      bulletinStatus={'draft'}
+      lastChanged={new Date()}
+      type={'search'}
+      status={'finished'}
+      sendDate={new Date()}
     />
     <Card
       size="large"
       title={'title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={''}
-      bulletinType={'event'}
-      bulletinStatus={'draft'}
+      lastChanged={new Date()}
+      type={'event'}
+      status={'draft'}
+    />
+  </div>
+);
+
+export const Caption = () => (
+  <div>
+    <Card
+      size="small"
+      title={'title'}
+      image={{ src: 'https://http.cat/201', text: 'httpCat' }}
+      lastChanged={new Date()}
+      type={'search'}
+      status={'archived'}
+      executionDate={new Date()}
+    />
+    <Card
+      size="large"
+      title={'title'}
+      image={{ src: 'https://http.cat/201', text: 'httpCat' }}
+      lastChanged={new Date()}
+      // type={'event'}
+      status={'draft'}
     />
   </div>
 );
@@ -57,37 +66,33 @@ export const Tags = () => (
       size="large"
       title={'Title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={'10.05.96'}
-      date={'10.05.96'}
-      bulletinType={'event'}
-      bulletinStatus={'draft'}
+      sendDate={new Date()}
+      type={'event'}
+      status={'draft'}
     />
     <Card
       size="large"
       title={'Title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={'10.05.96'}
-      date={'10.05.96'}
-      bulletinType={'event'}
-      bulletinStatus={'finished'}
+      sendDate={new Date()}
+      type={'search'}
+      status={'finished'}
     />
     <Card
       size="large"
       title={'Title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={'10.05.96'}
-      date={'10.05.96'}
-      bulletinType={'search'}
-      bulletinStatus={'draft'}
+      sendDate={new Date()}
+      type={'search'}
+      status={'published'}
     />
     <Card
       size="large"
       title={'Title'}
       image={{ src: 'https://http.cat/201', text: 'httpCat' }}
-      lastChanged={'10.05.96'}
-      date={'10.05.96'}
-      bulletinType={'search'}
-      bulletinStatus={'finished'}
+      sendDate={new Date()}
+      type={'search'}
+      status={'archived'}
     />
   </div>
 );

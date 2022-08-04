@@ -11,17 +11,18 @@ interface ImageProps {
 interface CardProps {
   title: string;
   image?: ImageProps;
-  date?: string;
-  lastChanged?: string;
+  sendDate?: Date;
+  executionDate?: Date;
+  lastChanged?: Date;
   size: 'small' | 'large';
-  bulletinType: 'event' | 'search';
-  bulletinStatus: 'draft' | 'finished';
+  type?: 'event' | 'search';
+  status: 'draft' | 'finished' | 'published' | 'archived';
   onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined;
 }
 const StyledCard = styled.div<Pick<CardProps, 'size'>>`
   box-shadow: 0 3px 6px ${color.borderShadow};
   background-color: ${color.white};
-  padding: 0 1rem;
+  padding: 0.75rem;
   ${(props) =>
     props.size === 'small'
       ? `
@@ -34,7 +35,6 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
 `;
 
 const StyledImage = styled.img<Pick<CardProps, 'size'>>`
-  padding: 1rem 0rem;
   object-fit: cover;
   ${(props) =>
     props.size === 'small'
@@ -46,13 +46,12 @@ const StyledImage = styled.img<Pick<CardProps, 'size'>>`
     `
       : `
         height: 7rem;
-        width: 14rem;
+        width: 12.5rem;
     `}
 `;
 
 const EmptySVG = styled.svg<Pick<CardProps, 'size'>>`
   fill: ${color.grayIncomplete};
-  padding: 1rem 0rem;
   rect {
     width: inherit;
     height: inherit;
@@ -65,7 +64,7 @@ const EmptySVG = styled.svg<Pick<CardProps, 'size'>>`
     `
       : `
         height: 7rem;
-        width: 14rem;
+        width: 12.5rem;
     `}
 `;
 const Tag = styled.div`
@@ -78,7 +77,7 @@ const Tag = styled.div`
 
 const CardWrapper = styled.div<Pick<CardProps, 'size'>>`
   display: grid;
-  row-gap: 11px;
+  row-gap: 0.5rem;
   font-family: ${typography.type.primary};
   ${(props) =>
     props.size === 'small'
@@ -90,10 +89,7 @@ const CardWrapper = styled.div<Pick<CardProps, 'size'>>`
       : `
         font-weight: ${typography.weight.regular};
         font-size: ${typography.size.px18}px;
-        padding-bottom: 1rem;
-        span:hover {
-            font-weight: ${typography.weight.extrabold};
-        }
+        margin-top: 0.625rem;
     `}
 `;
 
@@ -102,19 +98,73 @@ const TagWrapper = styled.div`
   column-gap: 5px;
   font-family: ${typography.type.primary};
   font-size: ${typography.size.px11}px;
-  &:hover {
-    font-weight: ${typography.weight.regular};
-  }
 `;
+
+const Caption = styled.p`
+  font-family: ${typography.type.primary};
+  font-size: ${typography.size.px11}px;
+  font-weight: ${typography.weight.regular};
+  color: ${color.grayText};
+  margin: 0;
+`;
+
+/**
+ * General card component.
+ * @param sendDate Date when a bulletin of type search was executed.
+ * @param executionDate Date when the bulletin is scheduled to be sent.
+ * @param lastChanged Date when the bulletin was last changed.
+ */
 export const Card = ({
-  date,
+  sendDate,
   lastChanged,
+  executionDate,
   size = 'small',
   title = 'Title',
   image,
-  bulletinType = 'event',
-  bulletinStatus = 'draft',
+  type,
+  status = 'draft',
 }: CardProps) => {
+  const formatDate = (date: Date) => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+  };
+
+  function renderCaption() {
+    if (executionDate) {
+      return <Caption>{`Sendes den ${formatDate(executionDate)}`}</Caption>;
+    } else if (lastChanged) {
+      return <Caption>{`Sist endret ${formatDate(lastChanged)}`}</Caption>;
+    }
+  }
+
+  function renderStatus() {
+    switch (status) {
+      case 'draft':
+        return <Tag>Utkast</Tag>;
+      case 'finished':
+        return <Tag>Ferdig</Tag>;
+      case 'published':
+        return <Tag>Publisert</Tag>;
+      case 'archived':
+        return <Tag>Arkivert</Tag>;
+      default:
+        return <></>;
+    }
+  }
+
+  function renderType() {
+    switch (type) {
+      case 'event':
+        return <Tag>Enkel</Tag>;
+      case 'search':
+        return <Tag>Automatisk</Tag>;
+      default:
+        return <></>;
+    }
+  }
+
   return (
     <StyledCard size={size}>
       {image ? (
@@ -126,11 +176,11 @@ export const Card = ({
       )}
       <CardWrapper size={size}>
         <span>{title}</span>
+        {renderCaption()}
         <TagWrapper>
-          <Tag>{bulletinType === 'event' ? 'Automatisk' : 'Enkel'}</Tag>
-          {bulletinStatus === 'draft' && <Tag>Kladd</Tag>}
-          {bulletinType === 'search' && bulletinStatus === 'finished' && <Tag>Sendt: {date}</Tag>}
-          {lastChanged && lastChanged !== '' && <Tag>Sist endret: {lastChanged}</Tag>}
+          {renderType()}
+          {renderStatus()}
+          {sendDate && type === 'search' && status === 'finished' && <Tag>Sendt: {formatDate(sendDate)}</Tag>}
         </TagWrapper>
       </CardWrapper>
     </StyledCard>
