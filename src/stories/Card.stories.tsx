@@ -12,13 +12,19 @@ export default {
       control: { type: 'radio', options: ['small', 'large'] },
     },
     lastChanged: {
-      control: { type: 'date' },
+      table: {
+        disable: true,
+      },
     },
     sendDate: {
-      control: { type: 'date' },
+      table: {
+        disable: true,
+      },
     },
     executionDate: {
-      control: { type: 'date' },
+      table: {
+        disable: true,
+      },
     },
     status: {
       control: { type: 'radio', options: ['draft', 'finished', 'published', 'archived'] },
