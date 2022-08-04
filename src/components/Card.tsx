@@ -22,6 +22,11 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
   box-shadow: 0 3px 6px ${color.borderShadow};
   background-color: ${color.white};
   padding: 0.75rem;
+
+  :hover {
+    background-color: ${color.lightLightOpaque};
+  }
+
   ${(props) =>
     props.size === 'small'
       ? `
