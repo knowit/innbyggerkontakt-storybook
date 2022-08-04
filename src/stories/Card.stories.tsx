@@ -88,6 +88,7 @@ export const Pictures = (args) => (
       type={'search'}
       status={'finished'}
       sendDate={new Date()}
+      {...args}
     />
     <Card
       size="large"
@@ -96,18 +97,10 @@ export const Pictures = (args) => (
       lastChanged={new Date()}
       type={'event'}
       status={'draft'}
+      {...args}
     />
   </ColumnContainer>
 );
-
-Pictures.args = {
-  title: 'title',
-  image: { src: 'https://http.cat/201', text: 'httpCat' },
-  lastChanged: new Date(),
-  type: 'search',
-  status: 'finished',
-  sendDate: new Date(),
-};
 
 export const Caption = (args) => (
   <RowContainer>
