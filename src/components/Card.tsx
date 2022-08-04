@@ -16,8 +16,7 @@ interface CardProps {
   lastChanged?: Date;
   size: 'small' | 'large';
   type?: 'event' | 'search';
-  status: 'draft' | 'finished' | 'published' | 'archived';
-  onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined;
+  status: 'draft' | 'finished' | 'active' | 'published' | 'archived' | 'planned';
 }
 const StyledCard = styled.div<Pick<CardProps, 'size'>>`
   box-shadow: 0 3px 6px ${color.borderShadow};
@@ -30,6 +29,7 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
         align-items: center;
     `
       : `
+        width: fit-content;
         display: inline-grid;
     `}
 `;
@@ -122,7 +122,7 @@ export const Card = ({
   title = 'Title',
   image,
   type,
-  status = 'draft',
+  status,
 }: CardProps) => {
   const formatDate = (date: Date) => {
     const day = date.getDate();
@@ -132,7 +132,9 @@ export const Card = ({
   };
 
   function renderCaption() {
-    if (executionDate) {
+    if (sendDate) {
+      return <Caption>{`Sendt den ${formatDate(sendDate)}`}</Caption>;
+    } else if (executionDate) {
       return <Caption>{`Sendes den ${formatDate(executionDate)}`}</Caption>;
     } else if (lastChanged) {
       return <Caption>{`Sist endret ${formatDate(lastChanged)}`}</Caption>;
@@ -149,6 +151,10 @@ export const Card = ({
         return <Tag>Publisert</Tag>;
       case 'archived':
         return <Tag>Arkivert</Tag>;
+      case 'active':
+        return <Tag>Aktiv</Tag>;
+      case 'planned':
+        return <Tag>Planlagt</Tag>;
       default:
         return <></>;
     }
@@ -156,9 +162,9 @@ export const Card = ({
 
   function renderType() {
     switch (type) {
-      case 'event':
-        return <Tag>Enkel</Tag>;
       case 'search':
+        return <Tag>Enkel</Tag>;
+      case 'event':
         return <Tag>Automatisk</Tag>;
       default:
         return <></>;
@@ -180,7 +186,6 @@ export const Card = ({
         <TagWrapper>
           {renderType()}
           {renderStatus()}
-          {sendDate && type === 'search' && status === 'finished' && <Tag>Sendt: {formatDate(sendDate)}</Tag>}
         </TagWrapper>
       </CardWrapper>
     </StyledCard>
