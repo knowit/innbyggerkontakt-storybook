@@ -30,7 +30,7 @@ export default {
       control: { type: 'radio', options: ['draft', 'finished', 'published', 'archived'] },
     },
     type: {
-      control: { type: 'radio', options: ['event', 'search'] },
+      control: { type: 'radio', options: ['event', 'search', undefined] },
     },
     title: {
       control: { type: 'text' },
