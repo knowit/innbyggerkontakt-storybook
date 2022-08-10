@@ -88,6 +88,10 @@ export const Pictures = (args) => (
       type={'search'}
       status={'finished'}
       sendDate={new Date()}
+<<<<<<< HEAD
+=======
+      {...args}
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
     />
     <Card
       size="large"
@@ -96,6 +100,7 @@ export const Pictures = (args) => (
       lastChanged={new Date()}
       type={'event'}
       status={'draft'}
+<<<<<<< HEAD
     />
   </ColumnContainer>
 );
@@ -118,6 +123,22 @@ export const Caption = (args) => (
   </RowContainer>
 );
 
+=======
+      {...args}
+    />
+  </ColumnContainer>
+);
+
+export const Caption = (args) => (
+  <RowContainer>
+    <Card size="large" type="search" status="planned" {...args} executionDate={new Date()} />
+    <Card size="large" type="search" status="draft" {...args} />
+    <Card size="large" type="search" sendDate={new Date()} status="finished" {...args} />
+    <Card size="large" type="event" lastChanged={new Date()} status="active" {...args} />
+  </RowContainer>
+);
+
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
 Caption.args = {
   title: 'title',
   image: { src: 'https://http.cat/201', text: 'httpCat' },

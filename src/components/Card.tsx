@@ -23,7 +23,10 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
   box-shadow: 0 3px 6px ${color.borderShadow};
   background-color: ${color.white};
   padding: 0.75rem;
+<<<<<<< HEAD
   overflow: hidden;
+=======
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
 
   :hover {
     background-color: ${color.lightLightOpaque};
@@ -35,8 +38,13 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
         align-items: center;
     `
       : `
+<<<<<<< HEAD
         flex-direction: column;
         width: 12.5rem;
+=======
+        width: fit-content;
+        display: inline-grid;
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
     `}
 `;
 
@@ -53,7 +61,10 @@ const StyledImage = styled.img<Pick<CardProps, 'size'>>`
       : `
         height: 7rem;
         width: 12.5rem;
+<<<<<<< HEAD
         align-self: center;
+=======
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
     `}
 `;
 
@@ -72,7 +83,10 @@ const EmptySVG = styled.svg<Pick<CardProps, 'size'>>`
       : `
         height: 7rem;
         width: 12.5rem;
+<<<<<<< HEAD
         align-self: center;
+=======
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
     `}
 `;
 const Tag = styled.div`
@@ -84,9 +98,14 @@ const Tag = styled.div`
 `;
 
 const CardWrapper = styled.div<Pick<CardProps, 'size'>>`
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+=======
+  display: grid;
+  row-gap: 0.5rem;
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
   font-family: ${typography.type.primary};
   font-weight: ${typography.weight.regular};
   ${(props) =>
@@ -116,6 +135,7 @@ const Caption = styled.p`
   margin: 0;
 `;
 
+<<<<<<< HEAD
 const Title = styled.span`
   overflow: hidden;
   white-space: nowrap;
@@ -124,6 +144,13 @@ const Title = styled.span`
 
 /**
  * General card component.
+=======
+/**
+ * General card component. The following precedence apply for the caption:
+ * 1. sendDate
+ * 2. executionDate
+ * 3. lastChanged
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
  * @param sendDate Date when a bulletin of type search was executed.
  * @param executionDate Date when the bulletin is scheduled to be sent.
  * @param lastChanged Date when the bulletin was last changed.
@@ -195,7 +222,11 @@ export const Card = ({
         </EmptySVG>
       )}
       <CardWrapper size={size}>
+<<<<<<< HEAD
         <Title>{title}</Title>
+=======
+        <span>{title}</span>
+>>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
         {renderCaption()}
         <TagWrapper>
           {renderType()}
