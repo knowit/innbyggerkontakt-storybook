@@ -19,9 +19,11 @@ interface CardProps {
   status: 'draft' | 'finished' | 'active' | 'published' | 'archived' | 'planned';
 }
 const StyledCard = styled.div<Pick<CardProps, 'size'>>`
+  display: flex;
   box-shadow: 0 3px 6px ${color.borderShadow};
   background-color: ${color.white};
   padding: 0.75rem;
+  overflow: hidden;
 
   :hover {
     background-color: ${color.lightLightOpaque};
@@ -30,12 +32,11 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
   ${(props) =>
     props.size === 'small'
       ? `
-        display: flex;
         align-items: center;
     `
       : `
-        width: fit-content;
-        display: inline-grid;
+        flex-direction: column;
+        width: 12.5rem;
     `}
 `;
 
@@ -52,6 +53,7 @@ const StyledImage = styled.img<Pick<CardProps, 'size'>>`
       : `
         height: 7rem;
         width: 12.5rem;
+        align-self: center;
     `}
 `;
 
@@ -70,6 +72,7 @@ const EmptySVG = styled.svg<Pick<CardProps, 'size'>>`
       : `
         height: 7rem;
         width: 12.5rem;
+        align-self: center;
     `}
 `;
 const Tag = styled.div`
@@ -81,18 +84,18 @@ const Tag = styled.div`
 `;
 
 const CardWrapper = styled.div<Pick<CardProps, 'size'>>`
-  display: grid;
-  row-gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   font-family: ${typography.type.primary};
+  font-weight: ${typography.weight.regular};
   ${(props) =>
     props.size === 'small'
       ? `
-        font-weight: ${typography.weight.regular};
         font-size: ${typography.size.px14}px;
         padding-left: 1rem;
     `
       : `
-        font-weight: ${typography.weight.regular};
         font-size: ${typography.size.px18}px;
         margin-top: 0.625rem;
     `}
@@ -100,7 +103,7 @@ const CardWrapper = styled.div<Pick<CardProps, 'size'>>`
 
 const TagWrapper = styled.div`
   display: flex;
-  column-gap: 5px;
+  gap: 5px;
   font-family: ${typography.type.primary};
   font-size: ${typography.size.px11}px;
 `;
@@ -111,6 +114,12 @@ const Caption = styled.p`
   font-weight: ${typography.weight.regular};
   color: ${color.grayText};
   margin: 0;
+`;
+
+const Title = styled.span`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 /**
@@ -186,7 +195,7 @@ export const Card = ({
         </EmptySVG>
       )}
       <CardWrapper size={size}>
-        <span>{title}</span>
+        <Title>{title}</Title>
         {renderCaption()}
         <TagWrapper>
           {renderType()}
