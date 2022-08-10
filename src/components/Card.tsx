@@ -123,14 +123,10 @@ const Title = styled.span`
 `;
 
 /**
- * General card component.
-=======
-/**
  * General card component. The following precedence apply for the caption:
  * 1. sendDate
  * 2. executionDate
  * 3. lastChanged
->>>>>>> 6b638eb5e65b869fc67ef759e2f2d100685bca8f
  * @param sendDate Date when a bulletin of type search was executed.
  * @param executionDate Date when the bulletin is scheduled to be sent.
  * @param lastChanged Date when the bulletin was last changed.
