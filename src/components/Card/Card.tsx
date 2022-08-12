@@ -2,7 +2,7 @@ import React from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { color, typography } from '../common';
+import { color, typography } from '../../common';
 
 interface ImageProps {
   src: string;

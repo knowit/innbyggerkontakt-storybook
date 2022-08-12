@@ -3,7 +3,7 @@ import React from 'react';
 import { KeyboardArrowLeft } from '@mui/icons-material';
 import { ComponentStory } from '@storybook/react';
 
-import { Button, ButtonProps } from '../components/Button';
+import { Button, ButtonProps } from '../components';
 import { Next } from '../images';
 
 export default {

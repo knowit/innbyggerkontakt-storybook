@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Edit, Message, Person } from '@mui/icons-material';
 
-import { Input, InputProps } from '../components/Input';
+import { Input, InputProps } from '../components';
 
 const message = <Message />;
 const person = <Person />;

@@ -2,10 +2,10 @@ import React, { ComponentPropsWithoutRef } from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { color, typography } from '../common';
-import CheckSvg from '../images/Check';
+import { color, typography } from '../../common';
+import CheckSvg from '../../images/Check';
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface ColorSwatchButtonProps extends ComponentPropsWithoutRef<'button'> {
   colorHex: string;
   checked: boolean;
   onClick?: () => void;
@@ -121,7 +121,10 @@ const StyledText = styled.p<Pick<ColorSwatchProps, 'colorHex'>>`
   height: 1.5rem;
 `;
 
-export const ColorSwatch: React.FC<ButtonProps> = ({ colorHex = '#1dd19d', checked = false, onClick }, ...props) => {
+export const ColorSwatch: React.FC<ColorSwatchButtonProps> = (
+  { colorHex = '#1dd19d', checked = false, onClick },
+  ...props
+) => {
   return (
     <StyledColorSwatchWrapper colorHex={colorHex}>
       <StyledButton

@@ -2,9 +2,9 @@ import React, { ReactNode } from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { color, typography } from '../common';
-import { Info } from '../images';
-import { Button } from './';
+import { color, typography } from '../../common';
+import { Info } from '../../images';
+import { Button } from '../Button/Button';
 
 export interface ConsentProps {
   className?: string;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Card } from '../components/Card';
+import { Card } from '../components';
 
 export default {
   title: 'Components/Card',

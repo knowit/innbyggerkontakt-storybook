@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Checkbox } from '../components';
-import { RadioButtonProps } from '../components/RadioButton';
+import { Checkbox, RadioButtonProps } from '../components';
 
 export default {
   title: 'Forms/Checkbox',

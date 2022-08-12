@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Person } from '@mui/icons-material';
 
-import Tag from '../components/Tag/Tag';
+import { Tag } from '../components';
 
 export default {
   title: 'Components/Tag',

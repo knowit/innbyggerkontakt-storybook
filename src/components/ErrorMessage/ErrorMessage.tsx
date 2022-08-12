@@ -2,8 +2,8 @@ import React from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { color, typography } from '../common';
-import { Clear } from '../images';
+import { color, typography } from '../../common';
+import { Clear } from '../../images';
 
 export interface ErrorMessageProps {
   color: 'warning' | 'error' | 'success';

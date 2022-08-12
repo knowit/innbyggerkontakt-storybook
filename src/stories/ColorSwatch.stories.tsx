@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { ColorSwatch } from '../components/';
-import { ButtonProps } from '../components/ColorSwatch';
+import { ColorSwatch, ColorSwatchButtonProps } from '../components/';
 
 export default {
   title: 'Components/ColorSwatch',
@@ -14,7 +13,7 @@ export default {
   },
 };
 
-export const Default = (args: ButtonProps) => <ColorSwatch {...args} />;
+export const Default = (args: ColorSwatchButtonProps) => <ColorSwatch {...args} />;
 
 export const WhiteTextShow = ({ checked }) => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

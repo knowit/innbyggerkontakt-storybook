@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Input, Popup } from '../components/';
-import { PopupProps } from '../components/Popup';
+import { Input, Popup, PopupProps } from '../components/';
 
 export default {
   title: 'Components/Popup',

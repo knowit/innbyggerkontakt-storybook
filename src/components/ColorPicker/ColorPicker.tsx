@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { ColorSwatch } from './ColorSwatch';
+import { ColorSwatch } from '../ColorSwatch/ColorSwatch';
 
 export interface ColorPickerProps {
   colors: Array<string>;

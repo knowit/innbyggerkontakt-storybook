@@ -13,7 +13,7 @@ import React, {
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { styled } from '@storybook/theming';
 
-import { color, typography } from '../common';
+import { color, typography } from '../../common';
 
 export interface InputProps {
   id: string;

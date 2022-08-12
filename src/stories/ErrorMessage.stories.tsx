@@ -2,8 +2,7 @@ import React from 'react';
 
 import { ComponentStory } from '@storybook/react';
 
-import { ErrorMessage } from '../components';
-import { ErrorMessageProps } from '../components/ErrorMessage';
+import { ErrorMessage, ErrorMessageProps } from '../components';
 
 export default {
   title: 'Components/ErrorMessage',

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { FilterToggle } from '../components';
 
 export default {

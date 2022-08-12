@@ -2,7 +2,7 @@ import React from 'react';
 
 import { styled } from '@storybook/theming';
 
-import { Label, RadioButtonProps } from './RadioButton';
+import { Label, RadioButtonProps } from '../RadioButton/RadioButton';
 
 interface CheckboxProps extends RadioButtonProps {
   checked?: boolean;
