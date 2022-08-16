@@ -33,6 +33,7 @@ const StyledCard = styled.div<Pick<CardProps, 'size'>>`
     props.size === 'small'
       ? `
         align-items: center;
+        max-width: 42.5rem;
     `
       : `
         flex-direction: column;
@@ -116,10 +117,18 @@ const Caption = styled.p`
   margin: 0;
 `;
 
-const Title = styled.span`
+const Title = styled.span<Pick<CardProps, 'size'>>`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+
+  ${(props) =>
+    props.size === 'small'
+      ? `
+        max-width: 20rem;
+    `
+      : `
+    `}
 `;
 
 /**
@@ -198,7 +207,9 @@ export const Card = ({
         </EmptySVG>
       )}
       <CardWrapper size={size}>
-        <Title>{title}</Title>
+        <Title title={title} size={size}>
+          {title}
+        </Title>
         {renderCaption()}
         <TagWrapper>
           {renderType()}
