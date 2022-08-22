@@ -49,7 +49,7 @@ export const Card = ({
   };
 
   const renderCaption = () => {
-    //if (size === 'small')
+    //if (size === 'small') return null;
     if (sendDate) {
       return <p className="cardCaption">{`Sendt den ${formatDate(sendDate)}`}</p>;
     } else if (executionDate) {
