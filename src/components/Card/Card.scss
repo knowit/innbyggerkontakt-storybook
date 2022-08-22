@@ -9,6 +9,7 @@
     background-color: colors.$white;
     overflow: hidden;
     border-radius: 3px;
+    cursor: pointer;
 
     &--small {
         align-items: center;
@@ -42,9 +43,18 @@
             background-color: colors.$light-blue-transparent;
         }
 
-        &--active {
+        &--active:not(:hover) {
             background-color: colors.$bright-blue;
             color: white;
+
+            p {
+                color: white !important;
+            }
+
+            .tagContainer {
+                background-color: rgba($color: colors.$light-blue, $alpha: 0.4);
+                color: white;
+            }
         }
 
         
@@ -139,7 +149,6 @@
         justify-content: center;
         background-color: white;
         color: colors.$dark-bright-blue;
-        cursor: pointer;
 
         > svg {
             transition: all 0.1s ease-in-out;

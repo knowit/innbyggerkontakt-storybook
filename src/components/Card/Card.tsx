@@ -16,7 +16,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   size: 'small' | 'large';
   tags?: string[];
   active?: boolean;
-  iconButtonOnClick?: () => void;
+  iconButtonOnClick?: (...args: any[]) => void;
 }
 
 /**
@@ -78,7 +78,7 @@ export const Card = ({
         </div>
       </div>
       {size === 'small' ? (
-        <div className="cardChildrenWrapper" onClick={() => iconButtonOnClick && iconButtonOnClick()}>
+        <div className="cardChildrenWrapper" onClick={(e) => iconButtonOnClick && iconButtonOnClick(e)}>
           {children ? children : <Delete />}
         </div>
       ) : null}
