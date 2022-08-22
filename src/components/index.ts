@@ -1,5 +1,5 @@
 import { Button } from './Button';
-import { Card } from './Card';
+import { Card } from './Card/Card';
 import { Checkbox } from './Checkbox';
 import { ColorPicker } from './ColorPicker';
 import { ColorSwatch } from './ColorSwatch';
