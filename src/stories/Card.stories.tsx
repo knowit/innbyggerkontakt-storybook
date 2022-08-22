@@ -1,8 +1,7 @@
 import React from 'react';
-
 import styled from '@emotion/styled';
-
-import { Card } from '../components/Card';
+import Delete from '@mui/icons-material/DeleteOutline';
+import { Card } from '../components';
 
 export default {
   title: 'Components/Card',
@@ -26,11 +25,11 @@ export default {
         disable: true,
       },
     },
-    status: {
-      control: { type: 'radio', options: ['draft', 'finished', 'published', 'archived'] },
-    },
-    type: {
-      control: { type: 'radio', options: ['event', 'search', undefined] },
+    tags: {
+      control: {
+        type: 'radio',
+        options: [['draft'], ['finished', 'draft'], ['published'], ['archived']],
+      },
     },
     title: {
       control: { type: 'text' },
@@ -89,7 +88,9 @@ export const Pictures = (args) => (
       status={'finished'}
       sendDate={new Date()}
       {...args}
-    />
+    >
+      <Delete />
+    </Card>
     <Card
       size="large"
       title={'title'}
