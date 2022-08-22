@@ -31,7 +31,7 @@ export interface InputProps {
 }
 
 const InputEl = styled.input`
-  margin: 0;
+  margin: 1px;
   width: 100%;
   border-radius: 3px;
   box-sizing: border-box;
@@ -45,6 +45,7 @@ const InputEl = styled.input`
   line-height: 20px;
 
   &:focus {
+    margin: 0;
     border-width: 2px;
     outline: none;
   }
