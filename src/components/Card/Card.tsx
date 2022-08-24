@@ -17,6 +17,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   tags?: string[];
   active?: boolean;
   iconButtonOnClick?: (...args: any[]) => void;
+  useDeleteButton?: boolean;
 }
 
 /**
@@ -39,6 +40,7 @@ export const Card = ({
   tags,
   children,
   iconButtonOnClick,
+  useDeleteButton = true,
   ...rest
 }: CardProps) => {
   const formatDate = (date: Date) => {
@@ -77,7 +79,7 @@ export const Card = ({
           <div className="tagWrapper">{tags && tags.length > 0 && tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}</div>
         </div>
       </div>
-      {size === 'small' ? (
+      {useDeleteButton && size === 'small' ? (
         <div className="cardChildrenWrapper" onClick={(e) => iconButtonOnClick && iconButtonOnClick(e)}>
           {children ? children : <Delete />}
         </div>
