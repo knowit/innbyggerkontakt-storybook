@@ -193,7 +193,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
               // externally.
               ref={ref}
               value={value}
-              type={type === 'password' && hidePwd ? 'password' : 'text'}
+              type={type === 'password' && hidePwd ? 'password' : type}
               aria-invalid={!!error}
               {...props}
             />
