@@ -151,15 +151,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
     const inputRef = (ref as MutableRefObject<HTMLInputElement>) || selfRef;
     const didFocusOnStart = useRef(false);
 
-    const [hidePwd, setHidePwd] = useState(true);
+    const [pwd, setPwd] = useState(type);
 
     const togglePassword = useCallback(
       (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
         e.stopPropagation();
-        setHidePwd(!hidePwd);
+        pwd === 'password' ? setPwd('text') : setPwd('password');
       },
-      [hidePwd],
+      [pwd],
     );
 
     useEffect(() => {
@@ -181,7 +181,15 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
         <InputWrapper appearence={appearence} error={error}>
           <>
             {type === 'password' ? (
-              <span onClick={togglePassword}>{hidePwd ? <Visibility /> : <VisibilityOff />}</span>
+              pwd === 'password' ? (
+                <span onClick={togglePassword}>
+                  <VisibilityOff />
+                </span>
+              ) : (
+                <span onClick={togglePassword}>
+                  <Visibility />
+                </span>
+              )
             ) : (
               icon
             )}
@@ -193,7 +201,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps & ComponentProps<ty
               // externally.
               ref={ref}
               value={value}
-              type={type === 'password' && hidePwd ? 'password' : type}
+              type={type === 'password' ? pwd : type}
               aria-invalid={!!error}
               {...props}
             />
