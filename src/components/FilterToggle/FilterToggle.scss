@@ -1,7 +1,7 @@
-@import "../../styles/mixins";
-@import "../../styles/defaultFonts";
-@import "../../styles/variables";
-@import "../../styles/defaultColors";
+@import '../../styles/mixins';
+@import '../../styles/defaultFonts';
+@import '../../styles/variables';
+@import '../../styles/defaultColors';
 
 .filterToggle {
     @include resetButton();
@@ -18,7 +18,7 @@
     gap: 1rem;
     position: relative;
 
-     &.toggled {
+    &.toggled {
         font-weight: $medium;
     }
 
@@ -38,11 +38,14 @@
             opacity: 1;
             transform: translateX(0px);
         }
-    
+
         &.hidden {
             position: absolute; // remove from document flow
             opacity: 0;
             transform: translateX(20px);
+        }
+        &.disabled {
+            fill: $gray-inactive;
         }
     }
 }

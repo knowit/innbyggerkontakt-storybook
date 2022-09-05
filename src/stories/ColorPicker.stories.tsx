@@ -4,7 +4,7 @@ import { ColorPicker } from '../components/';
 import { ColorPickerProps } from '../components/ColorPicker';
 
 export default {
-  title: 'Components/ColorPicker',
+  title: 'Molecules/ColorPicker',
   component: ColorPicker,
 };
 

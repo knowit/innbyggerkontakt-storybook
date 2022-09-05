@@ -11,7 +11,7 @@ const edit = <Edit />;
 const icons = { edit, person, message, undefined };
 
 export default {
-  title: 'Forms/Input',
+  title: 'Atoms/Input',
   component: Input,
   argTypes: {
     icon: {

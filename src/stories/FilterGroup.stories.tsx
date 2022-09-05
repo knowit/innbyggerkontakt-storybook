@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FilterGroup } from '../components';
 
 export default {
-  title: 'Components/FilterGroup',
+  title: 'Molecules/FilterGroup',
   component: FilterGroup,
 };
 

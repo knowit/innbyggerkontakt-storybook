@@ -7,7 +7,7 @@ import { Button, ButtonProps } from '../components/Button';
 import { Next } from '../images';
 
 export default {
-  title: 'Navigation/Button',
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     boxShadow: {

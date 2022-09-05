@@ -3,7 +3,7 @@ import React from 'react';
 import { Pagination } from '../components/';
 
 export default {
-  title: 'Components/Pagination',
+  title: 'Molecules/Pagination',
   component: Pagination,
 };
 

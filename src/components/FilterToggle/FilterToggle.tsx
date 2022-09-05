@@ -18,7 +18,7 @@ export const FilterToggle: React.FC<FilterToggleProps> = ({
 }) => {
   return (
     <button className={`filterToggle ${toggled && 'toggled'} ${disabled && 'disabled'}`} onClick={onClick} type={type}>
-      {<Check className={`check ${!toggled ? 'hidden' : ''}`} />}
+      {<Check className={`check ${!toggled ? 'hidden' : ''} ${disabled && 'disabled'}`} />}
       {label}
     </button>
   );

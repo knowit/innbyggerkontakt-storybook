@@ -4,7 +4,7 @@ import Delete from '@mui/icons-material/DeleteOutline';
 import { Card } from '../components';
 
 export default {
-  title: 'Components/Card',
+  title: 'Atoms/Card',
   component: Card,
   argTypes: {
     size: {
@@ -26,9 +26,9 @@ export default {
       },
     },
     tags: {
+      options: [['draft'], ['finished', 'draft'], ['published'], ['archived']],
       control: {
         type: 'radio',
-        options: [['draft'], ['finished', 'draft'], ['published'], ['archived']],
       },
     },
     title: {

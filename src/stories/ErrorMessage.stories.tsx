@@ -6,7 +6,7 @@ import { ErrorMessage } from '../components';
 import { ErrorMessageProps } from '../components/ErrorMessage';
 
 export default {
-  title: 'Components/ErrorMessage',
+  title: 'Atoms/ErrorMessage',
   component: ErrorMessage,
 };
 

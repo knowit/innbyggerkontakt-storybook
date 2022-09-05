@@ -4,7 +4,7 @@ import { Input, Popup } from '../components/';
 import { PopupProps } from '../components/Popup';
 
 export default {
-  title: 'Components/Popup',
+  title: 'Molecules/Popup',
   component: Popup,
 };
 

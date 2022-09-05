@@ -3,7 +3,7 @@ import React from 'react';
 import { Dropdown, SelectProps } from '../components/Dropdown/Dropdown';
 
 export default {
-  title: 'Forms/Dropdown',
+  title: 'Atoms/Dropdown',
   component: Dropdown,
 };
 

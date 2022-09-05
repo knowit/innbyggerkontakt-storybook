@@ -4,7 +4,7 @@ import { ColorSwatch } from '../components/';
 import { ButtonProps } from '../components/ColorSwatch';
 
 export default {
-  title: 'Components/ColorSwatch',
+  title: 'Atoms/ColorSwatch',
   component: ColorSwatch,
   argTypes: {
     colorHex: {

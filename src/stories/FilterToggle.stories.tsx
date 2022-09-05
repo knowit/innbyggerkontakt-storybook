@@ -1,7 +1,8 @@
+import React from 'react';
 import { FilterToggle } from '../components';
 
 export default {
-  title: 'Components/FilterToggle',
+  title: 'Atoms/FilterToggle',
   component: FilterToggle,
   argTypes: {
     toggled: {

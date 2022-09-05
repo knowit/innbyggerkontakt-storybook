@@ -4,7 +4,7 @@ import { Checkbox } from '../components';
 import { RadioButtonProps } from '../components/RadioButton';
 
 export default {
-  title: 'Forms/Checkbox',
+  title: 'Atoms/Checkbox',
   component: Checkbox,
 };
 

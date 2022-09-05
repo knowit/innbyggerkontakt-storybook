@@ -14,6 +14,8 @@ import { RadioButton } from './RadioButton';
 import { FilterToggle } from './FilterToggle/FilterToggle';
 import { FilterGroup } from './FilterGroup/FilterGroup';
 import { Tag } from './Tag/Tag';
+import { TextArea } from './TextArea';
+import { SMSText } from './SMSText';
 
 export {
   Button,
@@ -32,5 +34,7 @@ export {
   FilterToggle,
   FilterGroup,
   Tag,
+  TextArea,
+  SMSText,
 };
 export type { ErrorMessageProps };
