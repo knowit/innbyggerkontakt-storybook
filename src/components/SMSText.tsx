@@ -76,26 +76,28 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
         {children}
       </TextArea>
       <SMSTable>
-        <tr>
-          <td>Totalt antall tegn</td>
-          <td>{encoding === 'GSM-7' ? 153 * 5 : 67 * 5}</td>
-        </tr>
-        <tr>
-          <td>Antall tegn igjen i nåværende melding</td>
-          <td>{maxTextLength * smsMessages - textLength}</td>
-        </tr>
-        <tr>
-          <td>Antall meldinger</td>
-          <td>{smsMessages}</td>
-        </tr>
-        <tr>
-          <td>Pris mer SMS</td>
-          <td>0.32kr</td>
-        </tr>
-        <tr>
-          <td>Total pris mer mottaker</td>
-          <td>{0.32 * smsMessages}kr</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Totalt antall tegn</td>
+            <td>{encoding === 'GSM-7' ? 153 * 5 : 67 * 5}</td>
+          </tr>
+          <tr>
+            <td>Antall tegn igjen i nåværende melding</td>
+            <td>{maxTextLength * smsMessages - textLength}</td>
+          </tr>
+          <tr>
+            <td>Antall meldinger</td>
+            <td>{smsMessages}</td>
+          </tr>
+          <tr>
+            <td>Pris mer SMS</td>
+            <td>0.32kr</td>
+          </tr>
+          <tr>
+            <td>Total pris mer mottaker</td>
+            <td>{0.32 * smsMessages}kr</td>
+          </tr>
+        </tbody>
       </SMSTable>
     </>
   );

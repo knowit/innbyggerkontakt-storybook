@@ -39,7 +39,6 @@ const TextAreaStyled = styled.textarea`
 `;
 
 export const TextArea = ({ id, className, ariaLabel, children = null, ...props }: TextAreaProps) => {
-  console.log(children === null);
   return (
     <TextAreaWrapper>
       <TextAreaLabel htmlFor={id} className={className}>
