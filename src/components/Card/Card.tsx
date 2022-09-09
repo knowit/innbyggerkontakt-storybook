@@ -7,7 +7,7 @@ interface ImageProps {
   src: string;
   text: string;
 }
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   image?: ImageProps;
   sendDate?: Date;
