@@ -25,8 +25,11 @@ const SMSTable = styled.table`
     background-color: ${color.lightLightOpaque};
   }
 `;
+type SMSProps = Omit<TextAreaProps, 'onInternalChange'>;
+
 type Encoding = 'GSM-7' | 'UCS-2';
-export const SMSText = ({ id, className, ariaLabel, children = null, ...props }: TextAreaProps) => {
+
+export const SMSText = ({ id, className, ariaLabel, children = null, ...props }: SMSProps) => {
   const [maxTextLength, setMaxTextLength] = useState<number>(160);
   const [encoding, setEncoding] = useState<Encoding>('GSM-7');
   const [textLength, setTextLength] = useState<number>(0);
@@ -64,14 +67,14 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
     <>
       <TextArea
         maxLength={maxTextLength * 5}
-        onChange={(e) => {
-          getMessageSize(e.target.value);
-          getNumberOfSMS(e.target.value);
-        }}
         id={id}
         ariaLabel={ariaLabel}
         className={className}
         {...props}
+        onInternalChange={(e) => {
+          getMessageSize(e.target.value);
+          getNumberOfSMS(e.target.value);
+        }}
       >
         {children}
       </TextArea>

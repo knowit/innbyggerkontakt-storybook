@@ -8,8 +8,10 @@ export default {
   component: SMSText,
 };
 
-export const Default: ComponentStory<typeof SMSText> = () => (
-  <SMSText id={'sms'} ariaLabel={'sms tekst'}>
-    SMS tekst
-  </SMSText>
-);
+export const Default: ComponentStory<typeof SMSText> = () => {
+  return (
+    <SMSText id={'sms'} ariaLabel={'sms tekst'}>
+      SMS tekst
+    </SMSText>
+  );
+};

@@ -8,6 +8,7 @@ export interface TextAreaProps
   id: string;
   className?: string;
   ariaLabel: string;
+  onInternalChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextAreaWrapper = styled.div`
@@ -38,13 +39,21 @@ const TextAreaStyled = styled.textarea`
   }
 `;
 
-export const TextArea = ({ id, className, ariaLabel, children = null, ...props }: TextAreaProps) => {
+export const TextArea = ({ id, className, ariaLabel, onInternalChange, children = null, ...props }: TextAreaProps) => {
   return (
     <TextAreaWrapper>
       <TextAreaLabel htmlFor={id} className={className}>
         {children}
       </TextAreaLabel>
-      <TextAreaStyled {...props} id={id} aria-label={ariaLabel} />
+      <TextAreaStyled
+        {...props}
+        onChange={(e) => {
+          props.onChange?.(e);
+          onInternalChange(e);
+        }}
+        id={id}
+        aria-label={ariaLabel}
+      />
     </TextAreaWrapper>
   );
 };
