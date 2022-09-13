@@ -27,17 +27,13 @@ const SMSTable = styled.table`
 `;
 type SMSProps = Omit<TextAreaProps, 'onInternalChange'>;
 
-type Encoding = 'GSM-7' | 'UCS-2';
-
 export const SMSText = ({ id, className, ariaLabel, children = null, ...props }: SMSProps) => {
   const [maxTextLength, setMaxTextLength] = useState<number>(160);
-  const [encoding, setEncoding] = useState<Encoding>('GSM-7');
   const [textLength, setTextLength] = useState<number>(0);
   const [smsMessages, setSmsMessages] = useState<number>(1);
 
   const getMessageSize = (message: string): void => {
     const segmentSize = new SegmentedMessage(message);
-    setEncoding(segmentSize.encodingName);
     if (segmentSize.encodingName === 'GSM-7') {
       if (segmentSize.segmentsCount > 1) {
         setMaxTextLength(Math.floor(1072 / 7));
@@ -64,12 +60,11 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
   };
 
   return (
-    <>
+    <div className={className}>
       <TextArea
-        maxLength={maxTextLength * 5}
+        maxLength={765}
         id={id}
         ariaLabel={ariaLabel}
-        className={className}
         {...props}
         onInternalChange={(e) => {
           getMessageSize(e.target.value);
@@ -82,7 +77,7 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
         <tbody>
           <tr>
             <td>Totalt antall tegn</td>
-            <td>{encoding === 'GSM-7' ? 153 * 5 : 67 * 5}</td>
+            <td>{765}</td>
           </tr>
           <tr>
             <td>Antall tegn igjen i nåværende melding</td>
@@ -102,6 +97,6 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
           </tr>
         </tbody>
       </SMSTable>
-    </>
+    </div>
   );
 };
