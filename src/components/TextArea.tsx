@@ -33,7 +33,8 @@ const TextAreaStyled = styled.textarea`
 
   padding: 0.25rem;
 
-  border-color: ${color.evenDarkerGreen};
+  border: 1px solid ${color.evenDarkerGreen};
+  border-radius: 3px;
   &:focus-visible {
     outline-color: ${color.evenDarkerGreen};
   }

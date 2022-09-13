@@ -7,16 +7,22 @@ import { TextArea, TextAreaProps } from './TextArea';
 const SMSTable = styled.table`
   box-sizing: border-box;
   width: 100%;
+  border: 1px solid ${color.grayBorder};
+  margin-top: -3px;
+  border-radius: 3px;
   td {
     font-family: ${typography.type.primary};
     font-size: ${typography.size.px14}px;
     font-weight: ${typography.weight.regular};
+
     flex-basis: 50%;
   }
 
   tr {
     display: flex;
+    align-items: end;
     gap: 1rem;
+
     padding: 2px 4px;
     isolation: isolate;
   }
@@ -77,7 +83,7 @@ export const SMSText = ({ id, className, ariaLabel, children = null, ...props }:
         <tbody>
           <tr>
             <td>Totalt antall tegn</td>
-            <td>{765}</td>
+            <td>{textLength}/765</td>
           </tr>
           <tr>
             <td>Antall tegn igjen i nåværende melding</td>
