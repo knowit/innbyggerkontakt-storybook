@@ -71,7 +71,7 @@ export const Material = (args: ButtonProps) => (
   </div>
 );
 Material.args = {
-  svg: 'left',
+  svg: [25, 0],
   variant: 'square',
 };
 

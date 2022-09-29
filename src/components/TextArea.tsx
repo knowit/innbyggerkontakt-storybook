@@ -50,7 +50,7 @@ export const TextArea = ({ id, className, ariaLabel, onInternalChange, children 
         {...props}
         onChange={(e) => {
           props.onChange?.(e);
-          onInternalChange(e);
+          onInternalChange?.(e);
         }}
         id={id}
         aria-label={ariaLabel}

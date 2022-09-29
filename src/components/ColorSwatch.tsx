@@ -5,7 +5,7 @@ import { styled } from '@storybook/theming';
 import { color, typography } from '../common';
 import CheckSvg from '../images/Check';
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface SwatchProps extends ComponentPropsWithoutRef<'button'> {
   colorHex: string;
   checked: boolean;
   onClick?: () => void;
@@ -121,7 +121,7 @@ const StyledText = styled.p<Pick<ColorSwatchProps, 'colorHex'>>`
   height: 1.5rem;
 `;
 
-export const ColorSwatch: React.FC<ButtonProps> = ({ colorHex = '#1dd19d', checked = false, onClick }, ...props) => {
+export const ColorSwatch: React.FC<SwatchProps> = ({ colorHex = '#1dd19d', checked = false, onClick }, ...props) => {
   return (
     <StyledColorSwatchWrapper colorHex={colorHex}>
       <StyledButton

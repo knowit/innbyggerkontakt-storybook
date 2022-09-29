@@ -7,7 +7,7 @@ import { color, typography } from '../common/index';
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   text?: React.ReactNode;
   size?: 'big' | 'small';
-  svg?: 'left' | 'right';
+  svg?: [number, number];
   variant?: 'rounded' | 'square';
   type?: 'button' | 'submit' | 'reset';
   fontWeight?: 'regular' | 'bold' | 'extrabold';
@@ -20,7 +20,7 @@ interface StylingProps {
   fontSize: number;
   fontWeight: string;
   size: string;
-  svg?: string;
+  svg?: number[];
   variant: string;
   color: string;
   boxShadow: boolean;
@@ -111,22 +111,14 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'size' | 'svg
   `}
 
 ${(props) =>
-    props.svg === 'left' &&
+    props.svg &&
     `
-      padding: 6px 25px 6px 15px;
+      padding: 6px ${props.svg[0]}px 6px ${props.svg[1]}px;
       span > svg {
         margin-right: 0.2rem
       }
   `}
 
-${(props) =>
-    props.svg === 'right' &&
-    `
-      padding: 6px 15px 6px 25px;
-      > svg {
-        margin-left: 0.2rem
-      }
-  `}
 
   ${(props) =>
     props.color === 'primary' &&
