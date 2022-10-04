@@ -29,6 +29,7 @@ interface StylingProps {
 //text inside button
 const StyledSpan = styled.span<Pick<StylingProps, 'fontSize' | 'fontWeight'>>`
   font-family: ${typography.type.primary};
+  white-space: nowrap;
   ${(props) =>
     props.fontSize &&
     `
