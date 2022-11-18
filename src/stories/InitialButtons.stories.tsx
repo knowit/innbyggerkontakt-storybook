@@ -3,18 +3,18 @@ import React from 'react';
 import { ChevronLeft } from '@mui/icons-material';
 import { ComponentStory } from '@storybook/react';
 
-import { ButtonProps, InitialButtons } from '../components/MapButtons/InitialButtons';
+import { ButtonProps, MapButton } from '../components/MapButton';
 
 export default {
-  title: 'Molecules/InitialButtons',
-  component: InitialButtons,
+  title: 'Atoms/MapButton',
+  component: MapButton,
 };
 
-const Default: ComponentStory<typeof InitialButtons> = (args: ButtonProps) => (
-  <InitialButtons {...args}>
+const Default: ComponentStory<typeof MapButton> = (args: ButtonProps) => (
+  <MapButton {...args}>
     <ChevronLeft />
     Button text
-  </InitialButtons>
+  </MapButton>
 );
 
 export const Variant = Default.bind({});

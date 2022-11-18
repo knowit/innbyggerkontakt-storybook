@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography } from '../../common';
+import { color, typography } from '../common';
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
   text?: React.ReactNode;
@@ -144,7 +144,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
       }`}
 `;
 
-export const InitialButtons: React.FC = ({ value, children = null, color = 'primary', ...props }: ButtonProps) => {
+export const MapButton: React.FC = ({ value, children = null, color = 'primary', ...props }: ButtonProps) => {
   return (
     <>
       <StyledButton color={color} {...props}>
