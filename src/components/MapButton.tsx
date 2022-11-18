@@ -12,7 +12,7 @@ interface StylingProps {
   color: string;
 }
 
-const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
+const StyledButton = styled.button<Pick<StylingProps, 'color'>>`
   font-family: ${typography.type.primary};
   font-weight: ${typography.weight.regular};
   font-size: ${typography.size.px18}px;
@@ -21,6 +21,8 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
   border-radius: 90px;
   border-style: solid;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem;
+
   span,
   svg {
     display: flex;
@@ -30,7 +32,6 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
 
     white-space: nowrap;
   }
-  padding: 1rem 1.5rem;
 
   &:disabled {
     background-color: ${color.grayBorder};
@@ -45,6 +46,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
       border-width: 2px;
       transform: none;
     }
+  }
 
   ${(props) =>
     props.color === 'primary' &&
@@ -63,6 +65,9 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
         color: ${color.white};
         border-color: ${color.black};
         outline: none;
+      }
+      &:active {
+        transform: scale(0.95);
       }
      `}
 
@@ -85,6 +90,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
         outline: none;
   }
       &:active {
+        transform: scale(0.95);
         background-color: ${color.lightBrightBlue};
         color: ${color.white};
         border-color: ${color.lightBrightBlue};
@@ -109,13 +115,15 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
       border-color: ${color.darkBrightBlue};
       border-width: 3px;
       background-color: transparent;
+      
     }
-
+    
     &:focus{
-        color: ${color.brightBlue};
-        outline: none;
+      color: ${color.brightBlue};
+      outline: none;
     }
     &:active{
+        transform: scale(0.95);
         color: ${color.darkBrightBlue};
     }
   `}
@@ -137,6 +145,8 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
         outline: none;
   }
       &:active {
+        transform: scale(0.95);
+
         background-color: ${color.brightGreen};
         color: ${color.black};
         border-color: ${color.brightGreen};

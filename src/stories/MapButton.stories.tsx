@@ -17,5 +17,5 @@ const Default: ComponentStory<typeof MapButton> = (args: ButtonProps) => (
   </MapButton>
 );
 
-export const Variant = Default.bind({});
-Variant.args = { color: 'mint' };
+export const Color = Default.bind({});
+Color.args = { color: 'mint' };
