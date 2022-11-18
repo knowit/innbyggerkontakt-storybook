@@ -144,7 +144,7 @@ const StyledButton = styled.button<Pick<StylingProps, 'disabled' | 'color'>>`
       }`}
 `;
 
-export const MapButton: React.FC = ({ value, children = null, color = 'primary', ...props }: ButtonProps) => {
+export const MapButton = ({ value, children = null, color = 'primary', ...props }: ButtonProps) => {
   return (
     <>
       <StyledButton color={color} {...props}>
@@ -153,3 +153,5 @@ export const MapButton: React.FC = ({ value, children = null, color = 'primary',
     </>
   );
 };
+
+MapButton.displayName = 'MapButton';
