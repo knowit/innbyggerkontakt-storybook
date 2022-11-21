@@ -154,10 +154,10 @@ const StyledButton = styled.button<Pick<StylingProps, 'color'>>`
       }`}
 `;
 
-export const MapButton = ({ value, children = null, color = 'primary', ...props }: ButtonProps) => {
+export const MapButton = ({ value, children = null, color = 'primary', type = 'button', ...props }: ButtonProps) => {
   return (
     <>
-      <StyledButton color={color} {...props}>
+      <StyledButton type={type} color={color} {...props}>
         <span>{value || children}</span>
       </StyledButton>
     </>
