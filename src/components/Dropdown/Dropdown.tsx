@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Select, { Props, StylesConfig } from 'react-select';
 
 import { color, typography } from '../../common';
@@ -55,10 +53,10 @@ const StyledSelect: StylesConfig = {
     ...provided,
     fontSize: `${typography.size.px18}px`,
     fontWeight: state.selectProps.menuIsOpen ? `${typography.weight.extrabold}` : `${typography.weight.regular}`,
-    backgroundColor: `${color.brightBlue}`,
+    backgroundColor: `${color.brightBlue} !important`,
     color: `${color.white} !important`,
     borderRadius: '2px',
-    border: `1px solid ${color.brightBlue}`,
+    border: `1px solid ${color.brightBlue} !important`,
   }),
   menuList: (provided) => ({
     ...provided,
